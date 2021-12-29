@@ -15,7 +15,7 @@
 
 <body class="u-body">
     <div id="app">
-        <place v-for="(item, index) in printable" :key="item.hex" :name="item.name" :item="item.item" :text="item.text" :index="index" :end="printable.length - 1"></place>
+        <place v-for="(item, index) in printable" :key="item.hex" :name="item.name" :item="item.item" :terrain="renderTerrain(item)" :text="item.text" :index="index" :end="printable.length - 1"></place>
     </div>
 
     <script type="text/x-template" id="place-template">
@@ -28,10 +28,13 @@
                     <p v-if="item">
                         <i>Items in place: {{ item }}</i>
                     </p>
+                    <p>
+                        <i>Terrain: {{ terrain }}</i>
+                    </p>
                 </h6>
                 <p class="u-align-justify u-text u-text-3" v-html="text"></p>
                 <div v-if="index == end">
-                    <a href="index.html" class="u-active-none u-border-2 u-border-palette-2-light-1 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-btn-1">torna alla mappa</a>
+                    <a href="index.html" class="u-active-none u-border-2 u-border-palette-2-light-1 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-btn-1">return to the map</a>
                 </div>
             </div>
         </section>

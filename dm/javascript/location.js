@@ -29,6 +29,31 @@ var app = new Vue({
             })
 
             document.title = 'Hex ' + query.hex.toUpperCase();
+        },
+        renderTerrain(item) {
+            switch (item.terrain) {
+                case 'ash':
+                    return 'ashlands'
+                case 'bog':
+                    return 'caustic bogs'
+                case 'brambles':
+                    return 'bone brambles'
+                case 'cracks':
+                    return 'wasteland, cracked'
+                case 'fire':
+                    return 'plains of fire'
+                case 'hills':
+                    return 'hills, avernian'
+                case 'mountains':
+                    return 'mountains, avernian'
+                case 'volcano':
+                    return 'volcanic plains'
+                case 'waste':
+                    return 'wastelands'
+                default:
+                    console.log('Error, unknown terrain')
+                    return ('???')
+            }
         }
     },
     beforeMount: function() {
