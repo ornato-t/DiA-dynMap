@@ -506,7 +506,7 @@ let locations = [{
     {
         hex: "j6",
         name: "Camp of the 9th cohort",
-        text: "<p style=\"text-align: center;\"><big><strong>J6. CAMP OF THE 9th COHORT<br> </strong></big></p> <ul> <li><a href=\"https://www.dmsguild.com/product/289061/Encounters-in-Avernus?affiliate_id=81207\"><em>Encounters in Avernus</em></a>, p. 5</li> <li>Visible</li> </ul> <p>Camped on a low mesa overlooking the area is the 9<sup>th</sup> Cohort of the 497<sup>th</sup> Infantry Legion (9/497) commanded by the chain devil Signifier Hraxioch.</p> <p>The 9<sup>th</sup> is charged with guarding the narrow pass between the mountains and the Styx here. From atop the mesa, they can see the entirety of this hex. Characters passing through this hex are likely to be spotted and a patrol sent out to intercept them.</p>",
+        text: "<ul> <li><a href=\"https://www.dmsguild.com/product/289061/Encounters-in-Avernus?affiliate_id=81207\"><em>Encounters in Avernus</em></a>, p. 5</li> <li>Visible</li> </ul> <p>Camped on a low mesa overlooking the area is the 9<sup>th</sup> Cohort of the 497<sup>th</sup> Infantry Legion (9/497) commanded by the chain devil Signifier Hraxioch.</p> <p>The 9<sup>th</sup> is charged with guarding the narrow pass between the mountains and the Styx here. From atop the mesa, they can see the entirety of this hex. Characters passing through this hex are likely to be spotted and a patrol sent out to intercept them.</p>",
         terrain: "hills",
         status: "",
         item: ""
