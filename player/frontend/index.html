@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/map.css">
+    <title>Dynamic map</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <div id="app">
+        <div class="honeycomb mapClass" v-if="responseAvailable == true">
+            <row v-for="element in printable" :element="element" :printable="printable"></row>
+        </div>
+    </div>
+
+    <!--vue.js scripts below here-->
+
+    <script type="text/x-template" id="hexagon-template">
+        <div :id="hex" class="hexagon">
+            <div class="hexagontent">{{ name }}</div>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="row-template">
+        <div class="ibws-fix noselect">
+            <hexagon v-for="location in element" :key="location.hex" :hex="location.hex" :name="location.name" :class="location.status"></hexagon>
+        </div>
+    </script>
+
+    <script src="javascript/index.js"></script>
+</body>
+
+</html>

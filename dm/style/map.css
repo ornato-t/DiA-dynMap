@@ -1,0 +1,175 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Open Sans", sans-serif;
+    font-size: 65%;
+}
+
+body {
+    color: hsl(0, 0%, 10%);
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*max-width: 920px;*/
+    margin: 0 auto;
+    bottom: 0;
+    top: 0;
+}
+
+.hexagon {
+    position: relative;
+    display: inline-block;
+    /* left/right margin approx. 25% of .hexagon width + spacing */
+    margin: 1px 20px;
+    background-color: hsl(0, 20%, 50%);
+    opacity: 0.4;
+    text-align: center;
+}
+
+.hexagon,
+.hexagon::before,
+.hexagon::after {
+    /* easy way: height is width * 1.732
+  actual formula is 2*(width/(2*Math.tan(Math.PI/6)))
+  remove border-radius for sharp corners on hexagons */
+    width: 81px;
+    height: 138.6px;
+    /*border-radius: 20%/5%;*/
+    z-index: 90;
+}
+
+.hexagon::before {
+    background-color: inherit;
+    content: "";
+    position: absolute;
+    left: 0;
+    transform: rotate(-60deg);
+}
+
+.hexagon::after {
+    background-color: inherit;
+    content: "";
+    position: absolute;
+    left: 0;
+    transform: rotate(60deg);
+}
+
+.hexagon:nth-child(even) {
+    /* top approx. 50% of .hexagon height + spacing */
+    top: 70.2px;
+}
+
+.hexagon:hover {
+    background-color: hsla(60, 75%, 75%, 1);
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 105;
+    font-weight: 501;
+}
+
+.hexagon:active {
+    background-color: hsla(60, 75%, 50%, 1);
+    z-index: 110;
+}
+
+.hexagontent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    z-index: 100;
+}
+
+.ibws-fix {
+    /* inline-block whitespace fix */
+    font-size: 0;
+}
+
+.honeycomb {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    text-align: center;
+    height: 918px;
+    width: 1292.4px;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+.mapClass {
+    background-image: url("../images/map.jpg");
+}
+
+.terrainClass {
+    background-image: url("../images/terrain.png");
+}
+
+a:link,
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.hexImg {
+    position: relative;
+    display: inline-block;
+    /* left/right margin approx. 25% of .hexagon width + spacing */
+    text-align: center;
+    height: 145px;
+    width: 169.5px;
+    margin-top: -6px;
+    top: -139.5px;
+    left: 48.5px;
+    margin-left: -48px;
+}
+
+.hexImg:nth-child(even) {
+    /* top approx. 50% of .hexagon height + spacing */
+    top: -71px;
+}
+
+.visTerrain {
+    position: absolute;
+}
+
+.invisTerrain {
+    position: absolute;
+    opacity: 0;
+}
+
+.lowerLev {
+    background-image: url('../images/lower.png');
+}
+
+.upperLev {
+    position: absolute;
+    z-index: 85;
+    margin-top: -854px;
+    margin-left: -632px;
+    width: 1292px;
+}
