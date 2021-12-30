@@ -17,7 +17,7 @@ It is also possible to swap the background map with a simplified one which shows
 
 # Player view
 The Alexandrian [says the following](https://thealexandrian.net/wordpress/46020/roleplaying-games/5e-hexcrawl), regarding involving players in the hexcrawl structure:
->I found that the abstraction of the hex was extremely convenient on the GM’s side of the screen (for tracking navigation, keying encounters, and so forth), but had a negative impact on the other side of the screen [...]
+>I found that the abstraction of the hex was extremely convenient on the GM’s side of the screen (for tracking navigation, keying encounters, and so forth), but had a negative impact on the other side of the screen. I wanted the players interacting with the game world, not with the abstraction. Therefore, the hexes in the Alexandrian Hexcrawl were a player-unknown structure.
 
 That is a fair argument but while I was playing the Remix at my table I noticed that my players tended to lose themselves on the map, forgetting where they currently where or failing to understand where they were headed. 
 
@@ -32,14 +32,14 @@ Unforunately this implies additional complexity on the technical side, specifica
 Therefore I advise any non tech savy DM against using it. Further details on how to set the player view can be found in the [using this app](#using-this-app) paragraph.
 
 # Live demos
-Here are demos for the main application, consisting of the DM view and the additional player view:
+Here are two demos for the DM view and the player view:
 + [DM view](https://ornato-t.github.io/DiA-dynMap/dm/) (static site running on my personal Github Page)
 + [Player view](https://diadynmap-player.glitch.me/) (node.js application running on [glitch.com](https://glitch.com), a free hosting service)
 
-The player view pictures a group's map right after they leave Fort knucklebones, knowing only the positions of Kolasiah the warlord, Uldrak the tinker and the elemental galleon on the river Styx. Explored location are marked with a red hexagon, known and unexplored locations are marked with a dark brown-ish colour.
+The player view pictures a group's map right after they leave Fort knucklebones, knowing only the positions of Kolasiah the warlord, Uldrak the tinker and the elemental galleon on the river Styx. Explored location are marked with a red hexagon, known and unexplored locations are marked with a dark brown-ish colour. Any unknown locations are not shown at all.
 
 # Using this app
-The DM view works as-it-is both locally (even offline!) and remotely on any static website hosting service (there's plenty of free ones if you pick this option, Google is your best friend). The out of the box dataset contains all the info provided by The Alexandrian on his blog, however you can customize it to your heart's content if you feel like it, see below how.
+The DM view works as-it-is both locally (even offline!) and remotely on any static website hosting service (there's plenty of free ones out there). The out of the box dataset contains all the info provided by The Alexandrian on his blog, however you can customize it to your heart's content if you feel like it, see [below](#data-structure) how.
 
 As I have already mentioned the player view is a bit trickier to set up. The easiest way would probably be setting up a Glitch project and manually editing the file with the text editor they provide. Other alternatives could be:
 + Forking this repository (or even better, downloading it as a template) and setting up a custom web application, making a commit everytime you need to update something. Works both online and in person but is quite complicated to set up.
@@ -73,7 +73,7 @@ Player view:
 ```
 `/data`  contains the `data.js` file, which contains the dataset used by the app when it fills the map. 
 
-`/dm` contains the basic app, DM view only. It pulls the data directly from `/data`.  
+`/dm` contains the DM view. It pulls the dataset directly from `/data`.  
 `index.html`  contains the map page, `locations.html` contains the location specific page.  
 `/dm/images/tiles` contains the map tiles used for the terrain map in `index.html`.
 
