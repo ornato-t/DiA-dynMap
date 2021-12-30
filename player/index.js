@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 80
 
-let locations = require('../data/data.js')
+let locations = require('./data/data.js')
 
 app.use(express.static('frontend'))
 

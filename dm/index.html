@@ -30,7 +30,7 @@
             <row :element="element"></row>
 
             <div :class="[showTerrain ? visTerr : invisTerr]" style="position: absolute;">
-                <img class="hexImg noselect" v-for="terr in element" :id="terr.hex" :src="'images/tiles/'+terr.terrain+'.png'">
+                <img class="hexImg noselect" v-for="terr in element" :id="terr.hex" :src="'images/tiles/'+terr.terrain[0]+'.png'">
             </div>
         </div>
         <img class="upperLev" src="images/upper.png" v-if="showTerrain">

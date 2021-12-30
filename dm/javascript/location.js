@@ -31,7 +31,7 @@ var app = new Vue({
             document.title = 'Hex ' + query.hex.toUpperCase();
         },
         renderTerrain(item) {
-            switch (item.terrain) {
+            switch (item.terrain[0]) {
                 case 'ash':
                     return 'ashlands'
                 case 'bog':

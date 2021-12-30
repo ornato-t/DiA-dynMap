@@ -1,14 +1,14 @@
 {
-  "name": "dynmap-player",
-  "version": "1.0.0",
-  "description": "Player view of the \"dynMap\" web application for Baldur's Gate Descent into Avernus",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "ornato_t",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.2"
-  }
+    "name": "dynmap-player",
+    "version": "1.0.0",
+    "description": "Player view of the \"dynMap\" web application for Baldur's Gate Descent into Avernus",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "ornato_t",
+    "license": " GPL-3.0-only",
+    "dependencies": {
+        "express": "^4.17.2"
+    }
 }

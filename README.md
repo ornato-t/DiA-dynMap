@@ -11,6 +11,116 @@ This app tries to help the DM (and possibly the players) visualize the informati
 # The application
 The Alexandrian did a brilliant job writing the description of each location, creating a consistent worldbuilding and coming up with the structure itself. However, the way the information is presented to the user is (in my opinion, of course) a bit fragmentated and inconvenient to look at, especially during prep time. This is where DiA-dynMap comes into play!
 
-The app prints a grid of semi-transparent hexagons on the postermap of Avernus, adding a name label to each location. Additionally, it's possible to click on a hexagon opening a new page detailing the entire key written by The Alexandrian plus a handy reference for any notable item (I.E. dream machine components) present and the type of terrain featured by the hex.
+The app prints a grid of semi-transparent hexagons on the postermap of Avernus, adding a name label to each location. Additionally, it's possible to click on a hexagon opening a new page detailing the entire description written by The Alexandrian plus a handy reference for any notable item (I.E. dream machine components) present and the type of terrain featured by the hex.
 
 It is also possible to swap the background map with a simplified one which shows the type of terrain featured by every hex.
+
+# Player view
+The Alexandrian [says the following](https://thealexandrian.net/wordpress/46020/roleplaying-games/5e-hexcrawl), regarding involving players in the hexcrawl structure:
+>I found that the abstraction of the hex was extremely convenient on the GM’s side of the screen (for tracking navigation, keying encounters, and so forth), but had a negative impact on the other side of the screen [...]
+
+That is a fair argument but while I was playing the Remix at my table I noticed that my players tended to lose themselves on the map, forgetting where they currently where or failing to understand where they were headed. 
+
+Other groups may or may not face the same issue, either way in order to help my players' journey through Avernus, I created a player view which filters out any DMs-only detail and lets them keep track of their exploration without spoiling any unexplored areas.
+
+The player view lets the players see only the hexes they have already explored or whose location they are aware of. It does not let them open the location specific page (which contains secret DMs-only notes) nor interact with the map in any way. Additionally, any info they are not supposed to see is not present in the app at all; this means that they cannot see your notes even if they start analyzing the code line by line.
+
+Unforunately this implies additional complexity on the technical side, specifically because:
+ + You will need to host a server with your very own player view running on it
+ + You will have to update a file tracking the locations explored by your players as your campaign goes on
+
+Therefore I advise any non tech savy DM against using it. Further details on how to set the player view can be found in the [using this app](#using-this-app) paragraph.
+
+# Live demos
+Here are demos for the main application, consisting of the DM view and the additional player view:
++ [DM view](https://ornato-t.github.io/DiA-dynMap/dm/) (static site running on my personal Github Page)
++ [Player view](https://diadynmap-player.glitch.me/) (node.js application running on [glitch.com](https://glitch.com), a free hosting service)
+
+The player view pictures a group's map right after they leave Fort knucklebones, knowing only the positions of Kolasiah the warlord, Uldrak the tinker and the elemental galleon on the river Styx. Explored location are marked with a red hexagon, known and unexplored locations are marked with a dark brown-ish colour.
+
+# Using this app
+The DM view works as-it-is both locally (even offline!) and remotely on any static website hosting service (there's plenty of free ones if you pick this option, Google is your best friend). The out of the box dataset contains all the info provided by The Alexandrian on his blog, however you can customize it to your heart's content if you feel like it, see below how.
+
+As I have already mentioned the player view is a bit trickier to set up. The easiest way would probably be setting up a Glitch project and manually editing the file with the text editor they provide. Other alternatives could be:
++ Forking this repository (or even better, downloading it as a template) and setting up a custom web application, making a commit everytime you need to update something. Works both online and in person but is quite complicated to set up.
++ Running the server on your local network, on your own PC. Only doable if you play in person. _I plan to add it as a feature sometime in the future but for now this is not supported_.
+
+In order to set the player view up, you'll have to copy `/data/data.js` under `/player/data` and load the `/player` folder on Glitch or any other service you'll want to use.
+# Technical details
+## Dependencies
+DM view:
++ vue.js
+
+Player view:
++ vue.js
++ node.js
++ express.js
+
+## Repository structure
+```bash
+├───data
+├───dm
+│   ├───images
+│   │   └───tiles
+│   ├───javascript
+│   └───style
+└───player
+    ├───data
+    └───frontend
+        ├───images
+        ├───javascript
+        └───style
+```
+`/data`  contains the `data.js` file, which contains the dataset used by the app when it fills the map. 
+
+`/dm` contains the basic app, DM view only. It pulls the data directly from `/data`.  
+`index.html`  contains the map page, `locations.html` contains the location specific page.  
+`/dm/images/tiles` contains the map tiles used for the terrain map in `index.html`.
+
+`/player` contains the player view. The empty `/player/data` folder is where `data.js` needs to be copied for the player view implementation to work. 
+`/player/frontend` is similar in contents to `/dm` but without the location specific page and the terrain map.
+
+## Data structure
+`data.js` exports a JSON file with the following schema:
+```
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "",
+  "title": "Data",
+  "description": "Dataset for the DiA-dynMap",
+  "type": "object",
+  "properties": {
+    "hex": {
+      "description": "Hexagon on the grid (lowercase), ex: 'a1'.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Location name.",
+      "type": "string"
+    },
+    "text": {
+      "description": "Location text, as written by The Alexandrian.",
+      "type": "string"
+    },
+    "terrain": {
+      "description": "Terrain featured in the hex. [0] is the hex terrain. [1] is an optional value for special terrains, such as the Pit of Shummrath.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [ "ash", "bog", "brambles", "cracks", "fire", "hills", "mountains", "volcano", "waste" ]
+      },
+      "minItems": 1
+    },
+    "status": {
+      "description": "Optional field, used in player view. Marks wether a location is ['Unknown', 'Known', 'Explored'].",
+      "type": "string",
+      "enum": ["U", "K", "E"]
+    },
+    "item": {
+      "description": "Optional field, marks any dream machine component present in the location.",
+      "type": "string"
+    }
+  },
+  "required": [ "hex", "name", "text", "terrain" ]
+}
+```
