@@ -15,6 +15,8 @@ The app prints a grid of semi-transparent hexagons on the postermap of Avernus, 
 
 It is also possible to swap the background map with a simplified one which shows the type of terrain featured by every hex.
 
+_Disclaimer: as pointed out by a user on The Alexandrian's discord, on some location pages there are DM's Guild affiliate links. Do note that those link where copy-pasted along with everything else from The Alexandrian's blog and thus belong to him._
+
 # Player view
 The Alexandrian [says the following](https://thealexandrian.net/wordpress/46020/roleplaying-games/5e-hexcrawl), regarding involving players in the hexcrawl structure:
 >I found that the abstraction of the hex was extremely convenient on the GM’s side of the screen (for tracking navigation, keying encounters, and so forth), but had a negative impact on the other side of the screen. I wanted the players interacting with the game world, not with the abstraction. Therefore, the hexes in the Alexandrian Hexcrawl were a player-unknown structure.
