@@ -44,10 +44,12 @@ The player view pictures a group's map right after they leave Fort knucklebones,
 The DM view works as-it-is both locally (even offline!) and remotely on any static website hosting service (there's plenty of free ones out there). The out of the box dataset contains all the info provided by The Alexandrian on his blog, however you can customize it to your heart's content if you feel like it, see [below](#data-structure) how.
 
 As I have already mentioned the player view is a bit trickier to set up. The easiest way would probably be setting up a Glitch project and manually editing the file with the text editor they provide. Other alternatives could be:
-+ Forking this repository (or even better, downloading it as a template) and setting up a custom web application, making a commit everytime you need to update something. Works both online and in person but is quite complicated to set up.
-+ Running the server on your local network, on your own PC. Only doable if you play in person. _I plan to add it as a feature sometime in the future but for now this is not supported_.
++ Easier: running the server on your local network, on your own PC. Only doable if you play in person and all of your players are connected to the same wifi network. Check out how to [run the player view locally](https://github.com/ornato-t/DiA-dynMap/wiki/Setting-up-a-locally-running-player-view) on the app's wiki page.
++ Harder: forking this repository (or even better, importing it as a template) and setting up a custom web application, making a commit everytime you need to update something. Works both online and in person but is quite complicated to set up. You'll need to find a host provider capable of running node.js. Some free options are Heroku and AWS.
 
-In order to set the player view up, you'll have to copy `/data/data.js` under `/player/data` and load the `/player` folder on Glitch or any other service you'll want to use.
+Whichever you'll choose, I suggest you download the latest player view [release](https://github.com/ornato-t/DiA-dynMap/releases), which provides a .zip archive containing everything you'll need.
+
+Do note that if you were to download the whole repository you'd first need to copy `/data/data.js` under `/player/data` and load only the `/player` folder on the hosting service of your choiche (Glitch, Heroku, AWS...).
 # Technical details
 ## Dependencies
 DM view:
