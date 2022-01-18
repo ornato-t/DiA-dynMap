@@ -36,5 +36,5 @@ app.post('/data', function(req, res) {
 
 //Debug message when running, useful when running locally
 app.listen(port, () => {
-    console.log(`Listeing on http://${addresses[1]}:${port}`)
+    console.log(`Listeing on http://${addresses}:${port}`)
 })

@@ -1,6 +1,6 @@
 {
     "name": "dynmap-player",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "description": "Player view of the \"dynMap\" web application for Baldur's Gate Descent into Avernus",
     "main": "index.js",
     "scripts": {
