@@ -73,7 +73,7 @@ let locations = [{
 
     {
         hex: "b3",
-        name: "With-queen's abode",
+        name: "Witch-queen's abode",
         text: "<ul> <li><a href=\"https://www.dmsguild.com/product/293787/Dance-of-the-Deathless-Frost?affiliate_id=81207\"><em>Dance of Deathless Frost</em></a></li> </ul> <p>Tasha keeps a summer home in Avernus, as described in <a href=\"https://www.dmsguild.com/product/293787/Dance-of-the-Deathless-Frost?affiliate_id=81207\"><em>Dance of Deathless Frost</em></a><em>.</em> She is aware of <strong>Kostchtchie’s phylactery</strong>, knows that Baba Yaga knows its resting place, and is able to summon Baba Yaga’s hut. </p>",
         terrain: ["waste"],
         status: "U",

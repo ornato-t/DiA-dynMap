@@ -7,19 +7,12 @@
 }
 
 html {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Gothic", fantasy;
     font-size: 65%;
 }
 
 body {
-    color: hsl(0, 0%, 10%);
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    /*max-width: 920px;*/
-    margin: 0 auto;
-    bottom: 0;
-    top: 0;
+    background-color: #1c1c1c;
 }
 
 .hexagon {
@@ -87,6 +80,8 @@ body {
     font-size: 1.4rem;
     line-height: 1.2;
     z-index: 100;
+    color: #000; 
+    text-shadow: 1px 1px 2px #fff;
 }
 
 .ibws-fix {

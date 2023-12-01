@@ -3,12 +3,12 @@ body {
 }
 
 label {
-    font-family: MS Shell Dlg;
+    font-family: 'Cinzel', serif; 
     cursor: pointer;
 }
 
 .button {
-    font-family: MS Shell Dlg;
+    font-family: 'Cinzel', serif;
     display: inline-block;
     padding: 15px 25px;
     font-size: 16px;
@@ -16,31 +16,33 @@ label {
     text-align: center;
     text-decoration: none;
     outline: none;
-    color: #fff;
-    background-color: #ad5c3d;
+    min-width: 200px;
+    color: #fff; 
+    background-color: #4e342e; 
     border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px rgb(83, 83, 83);
+    border-radius: 8px; 
+    box-shadow: 0 6px #333; 
+    transition: all 0.3s ease; 
 }
 
 .btn-group .button:hover {
-    background-color: #a35638;
+    background-color: #5a4036;
+    box-shadow: 0 9px #333;
 }
 
 .button:active {
-    background-color: #a35638;
-    box-shadow: 0 5px rgb(58, 58, 58);
+    background-color: #3e2c23;
+    box-shadow: 0 3px #333; 
     transform: translateY(4px);
 }
 
 .btn-group .button {
     display: block;
-    margin-top: 30px;
+    margin: 20px auto;
 }
 
 .btn-group .button:not(:last-child) {
     border-bottom: none;
-    /* Prevent double borders */
 }
 
 .dropdown {
@@ -53,10 +55,19 @@ label {
 .dropdown-content {
     margin: 0;
     display: none;
-    position: relative;
+    position: absolute;
     min-width: 160px;
+    border-radius: 4px; 
+}
+
+.dropdown-content button {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; 
 }
 
 .dropdown-content button:hover {
-    background-color: none;
+    background-color: #3d3d3d;
 }
