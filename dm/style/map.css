@@ -102,11 +102,7 @@ body {
 }
 
 .mapClass {
-    background-image: url("../images/map.jpg");
-}
-
-.terrainClass {
-    background-image: url("../images/terrain.png");
+    background-image: url("../images/avernus-map.jpg");
 }
 
 a:link,
