@@ -32,9 +32,17 @@
 
 <script type="text/x-template" id="map-template">
     <div>
-        <location-marker v-for="location in locations" :key="location.numId"
+        <!-- Render location markers -->
+        <location-marker v-for="location in locations" :key="`node${location.numId}`"
                          :x="location.x" :y="location.y" :numId="location.numId">
         </location-marker>
+
+        <!-- Render connecting lines -->
+        <div v-for="location in locations" :key="location.numId">
+            <div v-for="connectedId in location.connectedTo" :key="connectedId"
+                 :style="calculateLineStyle(location, locations.find(loc => loc.numId === connectedId))" 
+                 class="line"></div>
+        </div>
     </div>
 </script>
 
