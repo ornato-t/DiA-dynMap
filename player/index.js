@@ -8,7 +8,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 80 //If a port is specified by the host (Heroku, Glitch...) use that, otherwise use 80. Will use 80 if ran locally
 
-let locations = require('./data/data.js') //Importing dataset
+let locations = require('./data/avernus-data.js') //Importing dataset
 
 //Get local IPv4 address
 for (var k in interfaces)
