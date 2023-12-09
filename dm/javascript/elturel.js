@@ -26,8 +26,6 @@ let mapComponent = {
   },
   methods: {
     calculateLineStyle(location1, location2) {
-        console.log(location1.numId)
-        console.log(location2.numId)
       if (!location2) {
         // If no matching location is found, return an empty style object or handle the error as needed
         return {};
