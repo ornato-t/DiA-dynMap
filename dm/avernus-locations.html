@@ -30,7 +30,6 @@
     <section class="u-align-center u-white u-section-1">
         <div class="u-sheet u-sheet-1">
             <h1 class="u-text u-text-1"> {{ name }}
-                <br/>
             </h1>
             <h6 class="u-align-center u-text u-text-2">
                 <p v-if="item">
@@ -41,9 +40,7 @@
                 </p>
             </h6>
             <p class="u-align-justify u-text u-text-3" v-html="text"></p>
-            <div v-if="index == end">
-                <a href="avernus.html" class="infernal-button">return to the map</a>
-            </div>
+            <a href="avernus.html" class="infernal-button">return to the map</a>
         </div>
     </section>
   </script>
