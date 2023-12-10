@@ -1,0 +1,28 @@
+.infernal-button {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center;
+    background-image: url('../images/buttons/button.png');
+    color: #fff; 
+    width: 200px; 
+    height: 130px; 
+    text-align: center;
+    padding: 10px 20px; 
+    text-decoration: none; 
+    font-size: 14px; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    user-select: none;
+    text-transform: capitalize;
+  }
+  
+  .infernal-button:hover {
+    color: #fff; 
+    background-image: url('../images/buttons/button3.png');
+    outline: none;
+  }
+  
+  .infernal-button:focus {
+    outline: none;
+    background-image: url('../images/buttons/button2.png');
+  }
