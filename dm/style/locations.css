@@ -22,6 +22,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 8px ridge #69171c;
 }
 
 .u-section-1 .u-sheet-1::before {

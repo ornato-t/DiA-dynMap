@@ -30,6 +30,7 @@ body {
   width: 1292.4px;
   padding-top: 10px;
   padding-right: 30px;
+  border: 8px ridge #69171c;
 }
 
 .mapNode {
