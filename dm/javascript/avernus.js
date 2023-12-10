@@ -6,7 +6,7 @@ let hexagonComponent = {
     },
     computed: {
         urlMaker() {
-            return 'locations.html?hex=' + this.hex
+            return 'avernus-locations.html?hex=' + this.hex
         }
     }
 };

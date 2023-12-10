@@ -30,8 +30,8 @@ let mapComponent = {
     "location-marker": locationComponent,
   },
   methods: {
-    calculateLineStyle(location1, location2) {
-      if (!location2) {
+    calculateLineStyle(location1, location2, numId, numId2) {
+      if (!location2 || numId > numId2) {
         // If no matching location is found, return an empty style object or handle the error as needed
         return {};
       }
@@ -51,8 +51,8 @@ let mapComponent = {
         transform: `rotate(${angle}deg)`,
         transformOrigin: "0 0",
         height: "4px",
-        border: "1px solid white",
-        backgroundColor: "black",
+        border: "1px solid black",
+        backgroundColor: "white",
         zIndex: 20
       };
     },

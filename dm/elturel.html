@@ -40,7 +40,7 @@
         <!-- Render connecting lines -->
         <div v-for="location in locations" :key="location.numId">
             <div v-for="connectedId in location.connectedTo" :key="connectedId"
-                 :style="calculateLineStyle(location, locations.find(loc => loc.numId === connectedId))" 
+                 :style="calculateLineStyle(location, locations.find(loc => loc.numId === connectedId), location.numId, connectedId)" 
                  class="line"></div>
         </div>
     </div>
