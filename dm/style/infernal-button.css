@@ -26,3 +26,11 @@
     outline: none;
     background-image: url('../images/buttons/button2.png');
   }
+
+  .floating {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+  }

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="style/avernus-map.css" />
-    <link rel="stylesheet" type="text/css" href="style/buttons.css" />
+    <link rel="stylesheet" href="style/infernal-button.css" media="screen" />
     <link
       id="u-theme-google-font"
       rel="stylesheet"
@@ -59,15 +59,9 @@
       <img class="upperLev" src="images/upper.png" v-if="showTerrain" />
     </div>
 
-    <div class="dropdown noselect">
-      <div class="button" onclick="toggleGroup()">
-        <label id="parentButton">Show options</label>
-      </div>
-      <div class="btn-group dropdown-content" id="btnGroup">
-        <button class="button" onclick="app.swapMap()">Swap map</button>
-        <!-- <button class="button">More features coming in the future...</button> -->
-      </div>
-    </div>
+
+    <button class="infernal-button floating" onclick="app.swapMap()">Swap map</button>
+
     <script src="javascript/avernus.js"></script>
   </body>
 </html>
