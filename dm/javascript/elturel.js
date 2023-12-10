@@ -14,6 +14,10 @@ let locationComponent = {
         left: this.x + "px",
       };
     },
+    parsedNumId() {
+      // Using a regular expression to retain only numbers
+      return this.numId.replace(/\D/g, '');
+    },
   },
 };
 
