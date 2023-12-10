@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Elturel Map</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="style/elturel-map.css">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style/elturel-map.css" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 
     <!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
     <script src="javascript/vue.js"></script>
     <script src="../data/elturel-data.js"></script>
     <script src="javascript/auxiliary.js"></script>
-</head>
+  </head>
 
-<!-- Templates -->
+  <!-- Templates -->
 
-<script type="text/x-template" id="location-template">
+  <script type="text/x-template" id="location-template">
     <a :href="urlMaker">
         <div class="mapNode" :style="styleObject" :title="locName">
             <div>{{ parsedNumId }}</div>
         </div>
     </a>
-</script>
+  </script>
 
-<script type="text/x-template" id="map-template">
+  <script type="text/x-template" id="map-template">
     <div>
         <!-- Render location markers -->
         <location-marker v-for="location in locations" :key="`node${location.numId}`"
@@ -38,19 +41,18 @@
         <!-- Render connecting lines -->
         <div v-for="location in locations" :key="location.numId">
             <div v-for="connectedId in location.connectedTo" :key="connectedId"
-                 :style="calculateLineStyle(location, locations.find(loc => loc.numId === connectedId), location.numId, connectedId)" 
+                 :style="calculateLineStyle(location, locations.find(loc => loc.numId === connectedId), location.numId, connectedId)"
                  class="line"></div>
         </div>
     </div>
-</script>
+  </script>
 
-<!-- Body -->
+  <!-- Body -->
 
-<body>
+  <body>
     <div id="app" class="mapClass">
-        <map-grid :locations="locations"></map-grid>
+      <map-grid :locations="locations"></map-grid>
     </div>
     <script src="javascript/elturel.js"></script>
-</body>
-
+  </body>
 </html>

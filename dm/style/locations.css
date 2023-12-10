@@ -1,75 +1,75 @@
 .u-section-1 {
-    background-color: #1c1c1c;
-    padding: 20px 0;    
-    min-height: 100vh;
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  min-height: 100vh;
 }
 
 .u-section-1 .u-sheet-1 {
-    min-height: 600px;
-    background-color: #262626;
-    border: 1px solid #404040;
-    padding: 20px;
+  min-height: 600px;
+  background-color: #262626;
+  border: 1px solid #404040;
+  padding: 20px;
 }
 
 .u-section-1 .u-text-1 {
-    font-size: 3rem;
-    color: #f4f4f4;
-    margin-bottom: 20px;
+  font-size: 3rem;
+  color: #f4f4f4;
+  margin-bottom: 20px;
 }
 
 .u-section-1 .u-text-2 {
-    font-size: 1.25rem;
-    color: #e0e0e0;
-    margin: 20px auto;
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  margin: 20px auto;
 }
 
 .u-section-1 .u-text-3 {
-    line-height: 1.6;
-    font-size: 1rem;
-    color: #ccc;
-    width: auto;
-    padding: 0 20px;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #ccc;
+  width: auto;
+  padding: 0 20px;
 }
 
 .u-section-1 .u-btn-1 {
-    background-color: #ad5c3d;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-top: 30px;
-    text-transform: none;
+  background-color: #ad5c3d;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  text-transform: none;
 }
 
 @media (max-width: 767px) {
-    .u-section-1 .u-text-1 {
-        font-size: 2rem;
-    }
+  .u-section-1 .u-text-1 {
+    font-size: 2rem;
+  }
 
-    .u-section-1 .u-text-3 {
-        font-size: 0.9rem;
-    }
+  .u-section-1 .u-text-3 {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 575px) {
-    .u-section-1 .u-sheet-1 {
-        min-height: auto;
-    }
-    .u-section-1 .u-text-1,
-    .u-section-1 .u-text-2,
-    .u-section-1 .u-text-3 {
-        width: auto;
-    }
+  .u-section-1 .u-sheet-1 {
+    min-height: auto;
+  }
+  .u-section-1 .u-text-1,
+  .u-section-1 .u-text-2,
+  .u-section-1 .u-text-3 {
+    width: auto;
+  }
 }
 
 h5 {
-    font-size: 1.1rem;
-    color: #f4f4f4;
-    margin: 15px 0;
+  font-size: 1.1rem;
+  color: #f4f4f4;
+  margin: 15px 0;
 }
 
 ul {
-    margin-top: 10px;
-    padding-left: 20px;
-    list-style-type: disc;
-    color: #e0e0e0;
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style-type: disc;
+  color: #e0e0e0;
 }

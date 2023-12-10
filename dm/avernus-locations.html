@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;">
+<html style="font-size: 16px">
+  <!-- Head -->
 
-<!-- Head -->
-
-<head>
+  <head>
     <title>Avernus Location</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style/imported.css" media="screen">
-    <link rel="stylesheet" href="style/locations.css" media="screen">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="style/imported.css" media="screen" />
+    <link rel="stylesheet" href="style/locations.css" media="screen" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 
     <!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
     <script src="javascript/vue.js"></script>
     <script src="../data/avernus-data.js"></script>
-</head>
+  </head>
 
-<!-- Templates -->
+  <!-- Templates -->
 
-<script type="text/x-template" id="place-template">
+  <script type="text/x-template" id="place-template">
     <section class="u-align-center u-white u-section-1">
         <div class="u-sheet u-sheet-1">
             <h1 class="u-text u-text-1"> {{ name }}
@@ -42,15 +45,23 @@
             </div>
         </div>
     </section>
-</script>
+  </script>
 
-<!-- Body -->
+  <!-- Body -->
 
-<body class="u-body">
+  <body class="u-body">
     <div id="app">
-        <place v-for="(item, index) in printable" :key="item.hex" :name="item.name" :item="item.item" :terrain="renderTerrain(item)" :text="item.text" :index="index" :end="printable.length - 1"></place>
+      <place
+        v-for="(item, index) in printable"
+        :key="item.hex"
+        :name="item.name"
+        :item="item.item"
+        :terrain="renderTerrain(item)"
+        :text="item.text"
+        :index="index"
+        :end="printable.length - 1"
+      ></place>
     </div>
     <script src="javascript/avernus-location.js"></script>
-</body>
-
+  </body>
 </html>

@@ -1,49 +1,49 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: "Gothic", fantasy;
-    font-size: 65%;
+  font-family: "Gothic", fantasy;
+  font-size: 65%;
 }
 
 body {
-    background-color: #1c1c1c;
+  background-color: #1c1c1c;
 }
 
 .mapClass {
-    background-image: url("../images/elturel-map.jpg");
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 0 auto;
-    text-align: center;
-    height: 918px;
-    width: 1292.4px;
-    padding-top: 10px;
-    padding-right: 30px;
+  background-image: url("../images/elturel-map.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+  text-align: center;
+  height: 918px;
+  width: 1292.4px;
+  padding-top: 10px;
+  padding-right: 30px;
 }
 
 .mapNode {
-    width: 55px;
-    height: 55px;
-    background-color: black;
-    border-radius: 50%;
-    border: 2px solid white;
-    transform: translate(-50%, -50%);
-    font-size: 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    z-index: 100;
+  width: 55px;
+  height: 55px;
+  background-color: black;
+  border-radius: 50%;
+  border: 2px solid white;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 100;
 }
 
 .line {
-    position: absolute;
+  position: absolute;
 }
