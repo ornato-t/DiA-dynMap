@@ -17,6 +17,11 @@ body {
   background-blend-mode: multiply;
   background-size: cover; 
   background-position: top; 
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;
 }
 
 .hexagon {
