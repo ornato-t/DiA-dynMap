@@ -4,6 +4,7 @@ let locationComponent = {
     x: Number,
     y: Number,
     numId: String,
+    locName: String
   },
   computed: {
     styleObject() {

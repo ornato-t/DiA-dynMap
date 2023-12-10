@@ -25,7 +25,7 @@
 <!-- Templates -->
 
 <script type="text/x-template" id="location-template">
-    <div class="mapNode" :style="styleObject" :title="'Location ' + numId">
+    <div class="mapNode" :style="styleObject" :title="locName">
         <div>{{numId}}</div>
     </div>
 </script>
@@ -34,7 +34,7 @@
     <div>
         <!-- Render location markers -->
         <location-marker v-for="location in locations" :key="`node${location.numId}`"
-                         :x="location.x" :y="location.y" :numId="location.numId">
+                         :x="location.x" :y="location.y" :numId="location.numId" :locName="location.name">
         </location-marker>
 
         <!-- Render connecting lines -->
