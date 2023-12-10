@@ -4,7 +4,7 @@ let locationComponent = {
     x: Number,
     y: Number,
     numId: String,
-    locName: String
+    locName: String,
   },
   computed: {
     styleObject() {
@@ -15,11 +15,11 @@ let locationComponent = {
       };
     },
     urlMaker() {
-      return 'elturel-locations.html?node=' + this.numId
+      return "elturel-locations.html?node=" + this.numId;
     },
     parsedNumId() {
       // Using a regular expression to retain only numbers
-      return this.numId.replace(/\D/g, '');
+      return this.numId.replace(/\D/g, "");
     },
   },
 };
@@ -56,7 +56,7 @@ let mapComponent = {
         height: "4px",
         border: "1px solid black",
         backgroundColor: "white",
-        zIndex: 20
+        zIndex: 20,
       };
     },
   },
