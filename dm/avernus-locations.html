@@ -15,7 +15,7 @@
     <link
       id="u-theme-google-font"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+      href="https://fonts.googleapis.com/css?family=MedievalSharp"
     />
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 
@@ -29,16 +29,16 @@
   <script type="text/x-template" id="place-template">
     <section class="u-align-center u-white u-section-1">
         <div class="u-sheet u-sheet-1">
-            <h1 class="u-text u-text-1"> {{ name }}
-            </h1>
-            <h6 class="u-align-center u-text u-text-2">
+            <div class="u-text u-text-1"> {{ name }}
+            </div>
+            <div class="u-text-2">
                 <p v-if="item">
-                    <i>Items in place: {{ item }}</i>
+                    Items in place: {{ item }}
                 </p>
                 <p>
-                    <i>Terrain: {{ terrain }}</i>
+                    Terrain: {{ terrain }}
                 </p>
-            </h6>
+              </div>
             <p class="u-align-justify u-text u-text-3" v-html="text"></p>
             <a href="avernus.html" class="infernal-button">return to the map</a>
         </div>
@@ -47,7 +47,7 @@
 
   <!-- Body -->
 
-  <body class="u-body">
+  <body>
     <div id="app">
       <place
         v-for="(item, index) in printable"

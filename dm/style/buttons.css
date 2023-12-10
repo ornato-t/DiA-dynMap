@@ -3,12 +3,12 @@ body {
 }
 
 label {
-  font-family: "Cinzel", serif;
+  font-family: 'MedievalSharp', cursive;
   cursor: pointer;
 }
 
 .button {
-  font-family: "Cinzel", serif;
+  font-family: 'MedievalSharp', cursive;
   display: inline-block;
   padding: 15px 25px;
   font-size: 16px;
