@@ -88,7 +88,7 @@ let locations = [
     connectedTo: ["9a", "9b", "1", "7"],
     name: "A Pair of Black Antlers",
     text:
-      "<p>Located on the west side of Maidensbridge Street, just south of where it swings westward to cross first Torm’s Bridges and then the Maidens Bridge. This was the best-known of Elturel’s taverns. A dimly lit, wood-paneled place adorned with a pair of stag’s antlers fully twenty feet across, along with many adventurers’ relics and paraphernalia.</p><p>The tavern was described in Volo’s Guide to the Sword Coast. There’s also a version in Hellturel, in which a group of besieging devils have trapped a group of demons inside. If you use this version, I recommend making the devils outside Hell Knights. The demons inside belong to Liashandra’s mission and were out scouting when they got cornered here.</p>",
+      `<p>Located on the west side of Maidensbridge Street, just south of where it swings westward to cross first Torm’s Bridges and then the Maidens Bridge. This was the best-known of Elturel’s taverns. A dimly lit, wood-paneled place adorned with a pair of stag’s antlers fully twenty feet across, along with many adventurers’ relics and paraphernalia.</p><p>The tavern was described in <a href="https://www.drivethrurpg.com/product/16845/Volos-Guide-to-the-Sword-Coast-2e?affiliate_id=81207"><em>Volo’s Guide to the Sword Coast</em></a>. There’s also a version in <em>Hellturel</em>, in which a group of besieging devils have trapped a group of demons inside. If you use this version, I recommend making the devils outside Hell Knights. The demons inside belong to Liashandra’s mission and were out scouting when they got cornered here.</p>`,
   },
   {
     x: 831,
@@ -124,7 +124,7 @@ let locations = [
     connectedTo: ["10", "12", "13"],
     name: "Helm's Shieldhall",
     text:
-      "<p>Helm’s Shieldhall is a fortress temple dedicated to the god Helm and the citadel of the Hellriders. It has been completely taken over by the Hell Knights and serves as their base of operations in Elturel.</p><p>The Shieldhall is also another opportunity to highlight the history of the city and, importantly, the Hellriders themselves. Much of this will be the publicly known history of the famous Hellride (see the tale told in Part 4A: The Road to Candlekeep), but you can build on that knowledge now with more specifics. (For example, you might include a few statues of famous knights known to have perished on the ride — i.e., those they’ll meet later who are now damned to Hell.) Hiding away a Secret History of the Knights of Elturel that confirms Lulu’s memories of Zariel leading the knights is also an option.</p>",
+      `<p>Helm’s Shieldhall is a fortress temple dedicated to the god Helm and the citadel of the Hellriders. It has been completely taken over by the Hell Knights and serves as their base of operations in Elturel.</p><p>The Shieldhall is also another opportunity to highlight the history of the city and, importantly, the Hellriders themselves. Much of this will be the publicly known history of the famous Hellride (see the tale told in <a href="https://thealexandrian.net/wordpress/44516/roleplaying-games/remixing-avernus-part-4a-the-road-to-candlekeep"><em>Part 4A: The Road to Candlekeep</em></a>), but you can build on that knowledge now with more specifics. (For example, you might include a few statues of famous knights known to have perished on the ride — i.e., those they’ll meet later who are now damned to Hell.) Hiding away a <em>Secret History of the Knights of Elturel</em> that confirms Lulu’s memories of Zariel leading the knights is also an option.</p>`,
   },
   {
     x: 312,
@@ -142,7 +142,7 @@ let locations = [
     connectedTo: ["10", "11", "12", "14", "17"],
     name: "Owlbear Butcher Shop",
     text:
-      "<p>Cultists of Zariel have taken over an exotic meats butcher shop. This location is detailed in Hellturel.</p>",
+      `<p>Cultists of Zariel have taken over an exotic meats butcher shop. This location is detailed in <a href="https://www.dmsguild.com/product/289028/Hellturel?affiliate_id=81207"><em>Hellturel</em></a>.</p>`,
   },
   {
     x: 293,
