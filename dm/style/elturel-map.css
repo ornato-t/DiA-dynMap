@@ -12,7 +12,11 @@ html {
 }
 
 body {
-  background-color: #1c1c1c;
+  background-color: #a81d26;
+  background-image: url('../images/avernus2.png');
+  background-blend-mode: multiply;
+  background-size: cover; 
+  background-position: top; 
 }
 
 .mapClass {

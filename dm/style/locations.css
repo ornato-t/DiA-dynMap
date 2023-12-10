@@ -1,11 +1,11 @@
 .u-section-1 {
-  background-color: #2b0105;
+  background-color: #69171c;
   padding: 20px 0;
   min-height: 100vh;
-  background-image: url('../images/avernus.jpg');
+  background-image: url('../images/avernus3.png');
   background-blend-mode: multiply;
   background-size: cover; 
-  background-position: top; 
+  background-position: bottom; 
 }
 
 .u-section-1 .u-sheet-1 {

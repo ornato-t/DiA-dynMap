@@ -12,7 +12,11 @@ html {
 }
 
 body {
-  background-color: #1c1c1c;
+  background-color: #69171c;
+  background-image: url('../images/avernus.jpg');
+  background-blend-mode: multiply;
+  background-size: cover; 
+  background-position: top; 
 }
 
 .hexagon {
