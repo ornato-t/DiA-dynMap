@@ -17,7 +17,7 @@ var app = new Vue({
     methods: {
         filter() {
             let vm = this;
-            let query = window.location.search.substr(1).split('&').reduce((accumulator, singleQueryParam) => {
+            let query = window.location.search.substring(1).split('&').reduce((accumulator, singleQueryParam) => {
                 const [key, value] = singleQueryParam.split('=');
                 accumulator[key] = value;
                 return accumulator;

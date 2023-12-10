@@ -14,6 +14,9 @@ let locationComponent = {
         left: this.x + "px",
       };
     },
+    urlMaker() {
+      return 'elturel-locations.html?node=' + this.numId
+    },
     parsedNumId() {
       // Using a regular expression to retain only numbers
       return this.numId.replace(/\D/g, '');
