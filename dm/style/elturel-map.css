@@ -57,3 +57,65 @@ body {
 .line {
   position: absolute;
 }
+
+.u-text-1 {
+  font-size: 3rem;
+  color: #f4f4f4;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  align-self: center;
+}
+
+.u-text-2 {
+  font-size: 2rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.generatorContainer {
+  height: 700px;
+  width: 1292.4px;
+  padding-top: 10px;
+  padding-right: 30px;
+  border: 8px ridge #69171c;
+  background-color: #3f2004;
+  background-image: url('../images/slab.jpg');
+  background-blend-mode: multiply;
+  background-size: cover; 
+  background-position: bottom; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.ornaments::before {
+  content: url('../images/left.png'); 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.ornaments::after {
+  content: url('../images/right.png');
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.column-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 800px;
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  min-width: 400px;
+  flex-direction: column;
+  justify-content: center;
+
+}

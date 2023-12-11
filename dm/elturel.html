@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="style/elturel-map.css" />
+    <link rel="stylesheet" type="text/css" href="style/elturel-map.css" />\
+    <link rel="stylesheet" href="style/infernal-button.css" media="screen" />
     <link
       id="u-theme-google-font"
       rel="stylesheet"
@@ -19,6 +20,7 @@
     <script src="javascript/vue.js"></script>
     <script src="../data/elturel-data.js"></script>
     <script src="javascript/auxiliary.js"></script>
+    <script src="javascript/randomGenerators.js"></script>
   </head>
 
   <!-- Templates -->
@@ -50,9 +52,31 @@
   <!-- Body -->
 
   <body>
-    <div id="app" class="mapClass">
-      <map-grid :locations="locations"></map-grid>
+    <div id="app" >
+      <div class="mapClass" v-if="generatorsOpen">
+        <map-grid :locations="locations"></map-grid>
+      </div>
+      <div class="generatorContainer" v-if="!generatorsOpen">
+        <div class="column-row">
+          <div class="column">
+            <h3 class="u-text-1">Random Building</h3>
+            <p class="u-text-2">Business: {{ business }}</p>
+            <p class="u-text-2">Damage: {{ damage }}</p>
+            <button class="infernal-button" onclick="app.makeBuilding()">Make New Building</button>
+          </div>
+
+          <div class="column">
+            <h3 class="u-text-1">Random NPC</h3>
+            <p class="u-text-2">Job: {{ job }}</p>
+            <p class="u-text-2">Crisis: {{ crisis }}</p>
+            <button class="infernal-button" onclick="app.makeNPC()">Make New NPC</button>
+          </div>
+        </div>
+
+        <div class="ornaments"></div>
+      </div>
     </div>
+    <button class="infernal-button floating" onclick="app.toggleRandomGenerators()">Toggle View</button>
     <script src="javascript/elturel.js"></script>
   </body>
 </html>

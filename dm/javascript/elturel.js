@@ -58,7 +58,7 @@ let mapComponent = {
         backgroundColor: "white",
         zIndex: 20,
       };
-    },
+    }
   },
 };
 
@@ -66,8 +66,28 @@ var app = new Vue({
   el: "#app",
   data: {
     locations: locations,
+    generatorsOpen: true,
+    business: "",
+    damage: "",
+    job: "",
+    crisis: ""
   },
   components: {
     "map-grid": mapComponent,
   },
+  methods: {
+    toggleRandomGenerators() {
+      this.generatorsOpen = !this.generatorsOpen
+    },
+    makeBuilding() {
+      const rng = generateRandomBuildingWithDamage()
+      this.business = rng.business
+      this.damage = rng.damage
+    },
+    makeNPC() {
+      const rng = generateRandomNPC()
+      this.job = rng.job
+      this.crisis = rng.crisis
+    }
+  }
 });
