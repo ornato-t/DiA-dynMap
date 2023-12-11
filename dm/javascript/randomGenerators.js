@@ -104,7 +104,26 @@ function generateRandomJob() {
 }
 
 function generateRandomCrisis() {
-    return getRandomValue(crisisOptions)
+    let randomVal = getRandomValue(crisisOptions);
+    if (randomVal === "Roll Again Twice") {
+        let crisisOne, crisisTwo;
+        do {
+            crisisOne = getRandomValue(crisisOptions);
+        } while (crisisOne === "Roll Again Twice");
+
+        do {
+            crisisTwo = getRandomValue(crisisOptions);
+        } while (crisisTwo === "Roll Again Twice");
+
+        if (crisisOne === "No Current Crisis") {
+            return crisisTwo;
+        } else if (crisisTwo === "No Current Crisis") {
+            return crisisOne;
+        }
+
+        return crisisOne + " and " + crisisTwo;
+    }
+    return randomVal;
 }
 
 function generateRandomNPC() {

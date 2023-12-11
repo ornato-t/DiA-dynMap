@@ -63,6 +63,11 @@
             <p class="u-text-2">Business: {{ business }}</p>
             <p class="u-text-2">Damage: {{ damage }}</p>
             <button class="infernal-button" onclick="app.makeBuilding()">Make New Building</button>
+            <div class="history">
+              <div class="history-el"  v-for="(item, index) in buildingHistory" :key="index">
+                <p>Business: {{ item.business }} </p><p> Damage: {{ item.damage }}</p>
+              </div>
+            </div>
           </div>
 
           <div class="column">
@@ -70,6 +75,11 @@
             <p class="u-text-2">Job: {{ job }}</p>
             <p class="u-text-2">Crisis: {{ crisis }}</p>
             <button class="infernal-button" onclick="app.makeNPC()">Make New NPC</button>
+            <div class="history">
+              <div class="history-el" v-for="(npc, index) in npcHistory" :key="`npc-${index}`">
+                <p>Job: {{ npc.job }} </p><p> Crisis: {{ npc.crisis }}</p>
+              </div>
+            </div>
           </div>
         </div>
 

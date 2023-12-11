@@ -69,7 +69,7 @@ body {
 .u-text-2 {
   font-size: 2rem;
   color: #e0e0e0;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   margin-top: 10px;
 }
 
@@ -79,7 +79,7 @@ body {
   padding-top: 10px;
   padding-right: 30px;
   border: 8px ridge #69171c;
-  background-color: #3f2004;
+  background-color: #262626;
   background-image: url('../images/slab.jpg');
   background-blend-mode: multiply;
   background-size: cover; 
@@ -107,9 +107,8 @@ body {
 .column-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 800px;
-  align-items: start;
+  justify-content: space-between;
+  width: 1000px
 }
 
 .column {
@@ -117,5 +116,30 @@ body {
   min-width: 400px;
   flex-direction: column;
   justify-content: center;
+}
 
+.history {
+  max-height: 300px;
+  min-height: 300px;
+  overflow-y: scroll;
+  font-size: 1.2rem;
+  color: #e0e0e0cb;
+  margin-bottom: 20px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 2px ridge #69171c;
+  background-color: rgb(34, 7, 7, .6);
+}
+
+.history-el {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.history-el p {
+  margin-right: 1rem;
 }

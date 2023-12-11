@@ -58,7 +58,7 @@ let mapComponent = {
         backgroundColor: "white",
         zIndex: 20,
       };
-    }
+    },
   },
 };
 
@@ -70,24 +70,34 @@ var app = new Vue({
     business: "",
     damage: "",
     job: "",
-    crisis: ""
+    crisis: "",
+    buildingHistory: [],
+    npcHistory: [],
   },
   components: {
     "map-grid": mapComponent,
   },
   methods: {
     toggleRandomGenerators() {
-      this.generatorsOpen = !this.generatorsOpen
+      this.generatorsOpen = !this.generatorsOpen;
     },
     makeBuilding() {
-      const rng = generateRandomBuildingWithDamage()
-      this.business = rng.business
-      this.damage = rng.damage
+      if(this.business){
+        this.buildingHistory = [{business: this.business, damage: this.damage}, ...this.buildingHistory]
+      }
+
+      const rng = generateRandomBuildingWithDamage();
+      this.business = rng.business;
+      this.damage = rng.damage;
     },
     makeNPC() {
-      const rng = generateRandomNPC()
-      this.job = rng.job
-      this.crisis = rng.crisis
-    }
-  }
+      if(this.job){
+        this.npcHistory = [{ job: this.job, crisis: this.crisis }, ...this.npcHistory]
+      }
+
+      const rng = generateRandomNPC();
+      this.job = rng.job;
+      this.crisis = rng.crisis;
+    },
+  },
 });
