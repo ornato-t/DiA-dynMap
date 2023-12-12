@@ -255,7 +255,7 @@ function generateRandomCrisis() {
     }
 
     if (crisisOne === crisisTwo) {
-        return crisisOne
+      return crisisOne;
     }
 
     return crisisOne + " and " + crisisTwo;
