@@ -70,6 +70,7 @@ var app = new Vue({
     business: "",
     damage: "",
     job: "",
+    npcName: "",
     crisis: "",
     buildingHistory: [],
     npcHistory: [],
@@ -82,8 +83,11 @@ var app = new Vue({
       this.generatorsOpen = !this.generatorsOpen;
     },
     makeBuilding() {
-      if(this.business){
-        this.buildingHistory = [{business: this.business, damage: this.damage}, ...this.buildingHistory]
+      if (this.business) {
+        this.buildingHistory = [
+          { business: this.business, damage: this.damage },
+          ...this.buildingHistory,
+        ];
       }
 
       const rng = generateRandomBuildingWithDamage();
@@ -91,13 +95,17 @@ var app = new Vue({
       this.damage = rng.damage;
     },
     makeNPC() {
-      if(this.job){
-        this.npcHistory = [{ job: this.job, crisis: this.crisis }, ...this.npcHistory]
+      if (this.job) {
+        this.npcHistory = [
+          { job: this.job, crisis: this.crisis, name: this.npcName },
+          ...this.npcHistory,
+        ];
       }
 
       const rng = generateRandomNPC();
       this.job = rng.job;
       this.crisis = rng.crisis;
+      this.npcName = rng.name;
     },
   },
 });

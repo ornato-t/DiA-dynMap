@@ -7,20 +7,20 @@
 }
 
 html {
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
   font-size: 65%;
 }
 
 body {
   background-color: #69171c;
-  background-image: url('../images/avernus.jpg');
+  background-image: url("../images/avernus.jpg");
   background-blend-mode: multiply;
-  background-size: cover; 
-  background-position: top; 
+  background-size: cover;
+  background-position: top;
 
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 

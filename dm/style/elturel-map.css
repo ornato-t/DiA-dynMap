@@ -7,20 +7,20 @@
 }
 
 html {
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
   font-size: 65%;
 }
 
 body {
   background-color: #a81d26;
-  background-image: url('../images/avernus2.png');
+  background-image: url("../images/avernus2.png");
   background-blend-mode: multiply;
-  background-size: cover; 
-  background-position: top; 
+  background-size: cover;
+  background-position: top;
 
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
@@ -58,10 +58,20 @@ body {
   position: absolute;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row p {
+  min-width: 260px;
+}
+
 .u-text-1 {
   font-size: 3rem;
   color: #f4f4f4;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-top: 40px;
   align-self: center;
 }
@@ -80,10 +90,10 @@ body {
   padding-right: 30px;
   border: 8px ridge #69171c;
   background-color: #262626;
-  background-image: url('../images/slab.jpg');
+  background-image: url("../images/slab.jpg");
   background-blend-mode: multiply;
-  background-size: cover; 
-  background-position: bottom; 
+  background-size: cover;
+  background-position: bottom;
   position: relative;
   display: flex;
   justify-content: center;
@@ -91,14 +101,14 @@ body {
 }
 
 .ornaments::before {
-  content: url('../images/left.png'); 
+  content: url("../images/left.png");
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
 .ornaments::after {
-  content: url('../images/right.png');
+  content: url("../images/right.png");
   position: absolute;
   bottom: 0;
   right: 0;
@@ -108,12 +118,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1000px
+  width: 1000px;
 }
 
 .column {
   display: flex;
   min-width: 400px;
+  max-width: 500px;
   flex-direction: column;
   justify-content: center;
 }
@@ -129,17 +140,28 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px ridge #69171c;
-  background-color: rgb(34, 7, 7, .6);
+  background-color: rgb(34, 7, 7, 0.6);
 }
 
 .history-el {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
-.history-el p {
+.npc-name {
   margin-right: 1rem;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.npc-data {
+  width: 50%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
 }

@@ -1,15 +1,15 @@
 html {
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
 }
 
 .u-section-1 {
   background-color: #69171c;
   padding: 20px 0;
   min-height: 100vh;
-  background-image: url('../images/avernus3.png');
+  background-image: url("../images/avernus3.png");
   background-blend-mode: multiply;
-  background-size: cover; 
-  background-position: bottom; 
+  background-size: cover;
+  background-position: bottom;
 }
 
 .u-section-1 .u-sheet-1 {
@@ -25,21 +25,24 @@ html {
   align-items: center;
   border: 8px ridge #69171c;
 
-  background-image: url('../images/slab.jpg');
+  background-image: url("../images/slab.jpg");
   background-blend-mode: multiply;
-  background-size: cover; 
-  background-position: bottom; 
+  background-size: cover;
+  background-position: bottom;
 }
 
 .u-section-1 .u-sheet-1::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the image horizontally and move it up by half its height */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the image horizontally and move it up by half its height */
   width: 100px;
   height: 100px;
-  background-image: url('../images/skull.png');
+  background-image: url("../images/skull.png");
   background-size: contain; /* Keeps the aspect ratio */
   background-repeat: no-repeat;
 }
@@ -108,6 +111,3 @@ ul {
   list-style-type: disc;
   color: #e0e0e0;
 }
-
-
-
