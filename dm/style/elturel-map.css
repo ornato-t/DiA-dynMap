@@ -87,7 +87,6 @@ body {
   height: 700px;
   width: 1292.4px;
   padding-top: 10px;
-  padding-right: 30px;
   border: 8px ridge #69171c;
   background-color: #262626;
   background-image: url("../images/slab.jpg");
@@ -98,6 +97,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
+}
+
+table {
+  margin-top: 30px;
+  width: 100%; 
+  border-collapse: collapse; 
+}
+
+th, td {
+  text-align: left; 
+  padding: 8px; 
+  border: 1px solid #ccc; 
 }
 
 .ornaments::before {
@@ -164,4 +175,52 @@ body {
   display: flex;
   align-items: start;
   flex-direction: column;
+}
+
+.u-text-1 {
+  font-size: 3rem;
+  color: #f4f4f4;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.encounter-text {
+  font-size: 1.75rem;
+  color: #f4f4f4;
+  margin-bottom: 20px;
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.encounter-text strong {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.u-sheet-1 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.generatorContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the image horizontally and move it up by half its height */
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/skull.png");
+  background-size: contain; /* Keeps the aspect ratio */
+  background-repeat: no-repeat;
 }

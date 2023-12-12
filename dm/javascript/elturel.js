@@ -24,6 +24,14 @@ let locationComponent = {
   },
 };
 
+let encounterComponent = {
+  template: "#encounter-template",
+  props: {
+    name: String,
+    text: String,
+  },
+};
+
 let mapComponent = {
   template: "#map-template",
   props: {
@@ -66,21 +74,42 @@ var app = new Vue({
   el: "#app",
   data: {
     locations: locations,
-    generatorsOpen: true,
+    generatorsOpen: false,
+    encountersOpen: false,
+    mapOpen: true,
     business: "",
     damage: "",
     job: "",
     npcName: "",
     crisis: "",
+    encounterName: "",
+    encounterText: "",
     buildingHistory: [],
     npcHistory: [],
   },
   components: {
     "map-grid": mapComponent,
+    encounter: encounterComponent,
   },
   methods: {
+    toggleMap() {
+      this.generatorsOpen = false;
+      this.mapOpen = true;
+      this.encountersOpen = false;
+    },
     toggleRandomGenerators() {
-      this.generatorsOpen = !this.generatorsOpen;
+      this.generatorsOpen = true;
+      this.mapOpen = false;
+      this.encountersOpen = false;
+    },
+    toggleEncounters() {
+      this.generatorsOpen = false;
+      this.mapOpen = false;
+      this.encountersOpen = true;
+
+      let encounter = generateElturelEncounter();
+      this.encounterName = encounter.title;
+      this.encounterText = encounter.text;
     },
     makeBuilding() {
       if (this.business) {

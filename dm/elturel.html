@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="style/elturel-map.css" />
-    \
     <link rel="stylesheet" href="style/infernal-button.css" media="screen" />
     <link
       id="u-theme-google-font"
@@ -20,6 +19,7 @@
     <!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
     <script src="javascript/vue.js"></script>
     <script src="../data/elturel-data.js"></script>
+    <script src="../data/elturel-encounters.js"></script>
     <script src="javascript/auxiliary.js"></script>
     <script src="javascript/randomGenerators.js"></script>
   </head>
@@ -50,14 +50,30 @@
     </div>
   </script>
 
+  <script type="text/x-template" id="encounter-template">
+    <section class="u-align-center u-white u-section-1">
+        <div class="u-sheet-1">
+            <div class="u-text-1">
+                {{ name }}
+            </div>
+            <p class="encounter-text" v-html="text"></p>
+        </div>
+    </section>
+  </script>
+
   <!-- Body -->
 
   <body>
     <div id="app">
-      <div class="mapClass" v-if="generatorsOpen">
+      <div class="mapClass" v-if="mapOpen">
         <map-grid :locations="locations"></map-grid>
       </div>
-      <div class="generatorContainer" v-if="!generatorsOpen">
+
+      <div class="generatorContainer" v-if="encountersOpen">
+        <encounter :name="encounterName" :text="encounterText"></encounter>
+      </div>
+
+      <div class="generatorContainer" v-if="generatorsOpen">
         <div class="column-row">
           <div class="column">
             <h3 class="u-text-1">Random Building</h3>
@@ -112,7 +128,13 @@
       class="infernal-button floating"
       onclick="app.toggleRandomGenerators()"
     >
-      Toggle View
+      Buildings & NPCs
+    </button>
+    <button class="infernal-button floating-2" onclick="app.toggleEncounters()">
+      Encounters
+    </button>
+    <button class="infernal-button floating-3" onclick="app.toggleMap()">
+      Map
     </button>
     <script src="javascript/elturel.js"></script>
   </body>

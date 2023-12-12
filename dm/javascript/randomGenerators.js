@@ -276,3 +276,7 @@ function generateRandomNPC() {
 
   return { job, crisis, name };
 }
+
+function generateElturelEncounter() {
+  return pickRandomValue(encounters);
+}
