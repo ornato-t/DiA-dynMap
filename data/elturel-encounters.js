@@ -40,32 +40,52 @@ let encounters = [
   {
     id: 5,
     title: "Hateful Patrol",
-    text: ``,
+    text: `<div>
+    <p>A merregon (see page 238 for its stat block) leads three spined devils through the streets, looking for mortal survivors or demons that have slipped past the devilish forces below the city. The spined devils grumble in Infernal, unhappy about being up here when they could be fighting demons in the battle below. The merregon takes their insolence in silence.</p>
+    </div>`,
   },
   {
     id: 6,
     title: "Imp Sales Pitch",
-    text: ``,
+    text: `<div>
+        <p>As the characters pass an alleyway, they notice an imp talking with a halfling. The two are focused on each other, making it easy for characters to get close enough to overhear the conversation in Common. The halfling, a baker (commoner) named Pilster Pebblehuck, has been hiding with his family in the basement of their bakery. They are running out of food, so Pilster has braved the streets to search for provisions. The imp, Perchillux, is offering Pilster a month's worth of food for the low price of his soul. Pilster is preparing to sign the contract as the characters come upon the pair.</p>
+        <p>The contract is written on parchment made of halfling skin. If any character interrupts the signing and asks to read the contract, the imp tells them this is none of their business. Pilster welcomes the interruption, however, since he is having second thoughts about the deal, and he hands the contract to the characters. A successful DC 15 Intelligence (Investigation) check penetrates the dense and convoluted text of the contract, which will give the imp the souls of Pilster's entire family if Pilster signs it.</p>
+        <p>If the characters attack the imp, it turns invisible and attempts to escape as quickly as possible. If the characters save Pilster from selling his soul, he thanks the characters and begs them to get him and his family to safety. His wife, Merrywile, and their three children are nearby.</p>
+        <p><strong>Treasure:</strong> In addition to the contract, the imp carries a soul coin (see page 225) from a previous interaction that it plans to give to its master.</p>
+    </div>`,
   },
   {
     id: 7,
     title: "Narzugon Cavalier",
-    text: ``,
+    text: `<div>
+    <p>A narzugoo (see page 239 for its stat block) patrols the streets of Elturel on the back of a nightmare equipped with infernal tack (see page 224). The devil has orders to hunt down and destroy any demons that might have slipped past the battle on the ground below and gained access to the city.</p>
+<p>When Lulu sees the creature, she tells the characters that it is very powerful and should not be confronted.</p>
+    </div>`,
   },
   {
     id: 8,
     title: "Spouts of Hellfire",
-    text: ``,
+    text: `<div>
+    <p>The characters see a charred humanoid corpse in the middle of the street, clutching a silvered longsword in its hand. When any creature moves within 5 feet of the corpse, a gout of hellfire erupts from it. Any creature within 5 feet of the corpse must make a DC 12 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.</p>
+<p><strong>Treasure:</strong> If the corpse is examined further, an intact vial is found in its charred belt pouch. The vial contains a potion of giant strength (frost).</p>
+    </div>`,
   },
   {
     id: 9,
     title: "Vrock Philosophy",
-    text: ``,
+    text: `<div>
+    <p>A vrock fled the battle and flew up to the city to ponder its role in all things. As long as the characters leave it alone, it doesn't attack. If they approach, it speaks with them, using its telepathy to communicate with one character at a time if none of the characters speaks Abyssal. The vrock pontificates on the vagaries and possible meanings of existence.</p>
+<p>If the characters treat it nicely, indulge it in its ponderings, and succeed on a DC 13 Charisma (Persuasion) check, they can get it to do them one small favor. If they attack it, the vrock repays their hostility in kind.</p>
+<p>Favors from the vrock might include providing information about what's happening beneath the city, about what forces guard the bridges between the city's east and west sections, or about the demons' plan to use a portal to enter the city (see area Gl2 on page 69), although it doesn't know where that portal is.</p>
+    </div>`,
   },
   {
     id: 10,
     title: "Zombie Horde",
-    text: ``,
+    text: `<div>
+    <p>As the characters pass a building, they hear a pounding coming from the front door. The door is stuck but not locked, requiring a successful DC 15 Strength check to force it open. If the characters do this, twelve zombies burst from the building as an avalanche of undead bodies, burying anyone standing near the door in the pile. This leaves those characters and the zombies prone at the start of combat.</p>
+    <p>If the characters deal with the zombies and search the building, they discover that it was a school. Five casks, each holding three gallons of fresh water, are stored in the basement.</p>
+    </div>`,
   },
   {
     id: 11,
@@ -279,7 +299,36 @@ let encounters = [
   {
     id: 27,
     title: "Necromantic Mist",
-    text: ``,
+    text: `<p>The mist is formed by necromantic energy emitted from the corrupted Companion. A successful DC 10 Intelligence (Investigation) check made to study the mist reveals that it pulsates in sync with the crackling energy of the corrupted Companion.</p>
+    <p>Any creature that enters the mist for the first time on a turn or starts its turn there takes 5 (1d10) necrotic damage. Climbing the sides of the pit without equipment requires a successful DC 10 Strength (Athletics) check.</p>
+    <<p>One undead creature appears during the time the characters investigate the pit, and more can appear if they leave this area, then return again while Gideon is still at large. Use the Undead Creation table to determine what kind of undead creature is created.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>d20 Undead</th>
+          <th>d20 Undead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1-4 Skeleton</td>
+          <td>13-15 Ghoul</td>
+        </tr>
+        <tr>
+          <td>5-7 Zombie</td>
+          <td>16-17 Ghast</td>
+        </tr>
+        <tr>
+          <td>8-10 Shadow</td>
+          <td>18-19 Wight</td>
+        </tr>
+        <tr>
+          <td>11-12 Specter</td>
+          <td>20 Wraith</td>
+        </tr>
+      </tbody>
+    </table>
+    `,
   },
   {
     id: 28,
