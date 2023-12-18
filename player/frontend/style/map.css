@@ -48,6 +48,13 @@ body {
   background-color: hsl(0, 60%, 45%);
 }
 
+.hexagon:hover {
+  background-color: hsla(60, 75%, 75%, 1);
+  opacity: 0.8;
+  z-index: 105;
+  font-weight: 501;
+}
+
 .hexagon,
 .hexagon::before,
 .hexagon::after {
