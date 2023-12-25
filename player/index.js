@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 80; //If a port is specified by the host (Heroku, Glitch...) use that, otherwise use 80. Will use 80 if ran locally
 
 let locations = require("./data/avernus-data.js"); //Importing dataset
-let quests = require("./data/quests.js")
+let quests = require("./data/quests.js");
 
 //Get local IPv4 address
 for (var k in interfaces)
@@ -36,7 +36,26 @@ app.post("/data/locations", function (req, res) {
 });
 
 app.post("/data/quests", function (req, res) {
-  res.send(quests);
+  app.post("/data/quests", function (req, res) {
+    const addExpandedProperty = (items, topLevel = true) => {
+      return items.map(item => {
+        const newItem = { ...item, expanded: topLevel };
+  
+        if (newItem.children) {
+          newItem.children = addExpandedProperty(newItem.children, false);
+        }
+  
+        return newItem;
+      });
+    };
+  
+    const questsExpanded = addExpandedProperty(quests);
+    res.send(questsExpanded);
+  });
+  
+
+  const questsExpanded = addExpandedProperty(quests);
+  res.send(questsExpanded);
 });
 
 //Debug message when running, useful when running locally

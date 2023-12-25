@@ -56,7 +56,9 @@
         </div>
 
         <div class="quest-container-columns">
-          <div class="quest-list">nothing here yet</div>
+          <div class="quest-list">
+            <collapsible-list :items="quests"></collapsible-list>
+          </div>
           <div class="quest-info"></div>
         </div>
       </div>
@@ -72,6 +74,25 @@
     <script type="text/x-template" id="row-template">
       <div class="ibws-fix noselect">
           <hexagon v-for="location in element" :key="location.hex" :hex="location.hex" :name="location.name" :class="location.status"></hexagon>
+      </div>
+    </script>
+
+    <script type="text/x-template" id="collapsible-list-template">
+      <div class="collapsible-list">
+        <div
+          class="collapsible-item"
+          v-for="(item, index) in items"
+          :key="index"
+          @click="toggle(item)"
+        >
+          <div class="collapsible-title">{{ item.title }}</div>
+          <collapsible-list
+            v-if="item.children && item.expanded"
+            :items="item.children"
+          >
+          FIX ME
+          </collapsible-list>
+        </div>
       </div>
     </script>
 

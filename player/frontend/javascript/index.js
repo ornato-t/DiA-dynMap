@@ -18,6 +18,18 @@ let rowComponent = {
   },
 };
 
+let collapsibleListComponent = {
+  template: "#collapsible-list-template",
+  props: {
+    items: Array,
+  },
+  methods: {
+    toggle(item) {
+      this.$set(item, "expanded", !item.expanded);
+    },
+  },
+};
+
 var app = new Vue({
   el: "#app",
   data: {
@@ -29,6 +41,7 @@ var app = new Vue({
   },
   components: {
     row: rowComponent,
+    collapsibleList: collapsibleListComponent,
   },
   methods: {
     //Receives the processed JSON data from the backend (which performs information hiding). Prints any error in the console
