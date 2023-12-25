@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="style/map.css" />
+    <link rel="stylesheet" type="text/css" href="style/buttons.css" />
+    <link rel="stylesheet" type="text/css" href="style/quest-journal.css" />
     <link
       id="u-theme-google-font"
       rel="stylesheet"
@@ -21,15 +23,39 @@
 
   <body>
     <div id="app">
-      <div class="honeycomb mapClass" v-if="responseAvailable == true">
+      <div class="honeycomb mapClass" v-if="responseAvailable == true && !questBoardOpen">
         <row
           v-for="element in printable"
           :element="element"
           :printable="printable"
         ></row>
       </div>
-    </div>
 
+      <button class="infernal-button quest-button" onclick="app.toggleQuests()">
+        Quests
+      </button>
+      <button class="infernal-button faction-button" onclick="app.toggleEncounters()">
+        Factions
+      </button>
+
+      <div v-if="questBoardOpen" class="quest-container">
+        <div class="quest-journal">
+          Quest Journal
+          <button class="infernal-button close-button" onclick="app.toggleQuests()">
+            Close
+          </button>
+        </div>
+
+        <div class="quest-container-columns">
+          <div class="quest-list">
+            nothing here yet
+          </div>  
+          <div class="quest-info">
+  
+          </div>
+        </div>
+      </div>
+    </div>
     <!--vue.js scripts below here-->
 
     <script type="text/x-template" id="hexagon-template">

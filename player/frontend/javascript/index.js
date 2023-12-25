@@ -24,6 +24,7 @@ var app = new Vue({
     printable: [],
     locations: [],
     responseAvailable: false,
+    questBoardOpen: false,
   },
   components: {
     row: rowComponent,
@@ -92,6 +93,9 @@ var app = new Vue({
         prev = item;
       });
     },
+    toggleQuests(){
+      this.questBoardOpen = !this.questBoardOpen
+    }
   },
   created() {
     this.requestData();
