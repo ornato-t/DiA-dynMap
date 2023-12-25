@@ -101,14 +101,15 @@ body {
 
 table {
   margin-top: 30px;
-  width: 100%; 
-  border-collapse: collapse; 
+  width: 100%;
+  border-collapse: collapse;
 }
 
-th, td {
-  text-align: left; 
-  padding: 8px; 
-  border: 1px solid #ccc; 
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ccc;
 }
 
 .ornaments::before {

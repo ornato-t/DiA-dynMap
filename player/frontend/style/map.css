@@ -182,9 +182,9 @@ a:visited {
 }
 
 .quest-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 .faction-button {
@@ -192,4 +192,3 @@ a:visited {
   top: 100px;
   left: 20px;
 }
-

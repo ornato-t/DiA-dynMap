@@ -23,6 +23,7 @@ var app = new Vue({
   data: {
     printable: [],
     locations: [],
+    quests: [],
     responseAvailable: false,
     questBoardOpen: false,
   },
@@ -35,7 +36,8 @@ var app = new Vue({
     requestData() {
       let vm = this;
       vm.responseAvailable = false;
-      fetch("/data", {
+      // fetch locations
+      fetch("/data/locations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
@@ -49,6 +51,25 @@ var app = new Vue({
         .then((response) => {
           vm.locations = response;
           vm.responseAvailable = true;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      // fetch quests
+      fetch("/data/quests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => {
+          if (response.ok) return response.json();
+          else
+            console.log(
+              "Server returned " + response.status + " : " + response.statusText
+            );
+        })
+        .then((response) => {
+          vm.quests = response;
         })
         .catch((err) => {
           console.log(err);
@@ -93,9 +114,9 @@ var app = new Vue({
         prev = item;
       });
     },
-    toggleQuests(){
-      this.questBoardOpen = !this.questBoardOpen
-    }
+    toggleQuests() {
+      this.questBoardOpen = !this.questBoardOpen;
+    },
   },
   created() {
     this.requestData();

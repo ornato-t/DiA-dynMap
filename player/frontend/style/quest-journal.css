@@ -1,61 +1,60 @@
 .quest-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 200;
-    min-height: 100vh;
-    min-width: 100vw;
-    color: #ccc;
-    padding: 20px;
-  }
-  
-  .quest-container::before {
-    content: ''; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/fortress.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1; 
-  }
-  
-  
-  .quest-journal {
-    font-size: 36px; 
-    font-weight: bold; 
-    border-bottom: 1px solid #666; 
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    height: 100px;
-  }
-  
-  .quest-container-columns {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .quest-list {
-    width: 50%;
-    background: rgba(0, 0, 0, 0.8); 
-    padding: 20px;
-    margin-right: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
-    border-radius: 10px; 
-    overflow-y: auto; 
-    min-height: 700px;
-    height: 100%;
-  }
-  
-  /* Right column for quest info */
-  .quest-info {
-    width: 50%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    overflow-y: auto; 
-    height: 500px; 
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: #ccc;
+  padding: 20px;
+}
+
+.quest-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/fortress.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.quest-journal {
+  font-size: 36px;
+  font-weight: bold;
+  border-bottom: 1px solid #666;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  height: 100px;
+}
+
+.quest-container-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quest-list {
+  width: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  overflow-y: auto;
+  min-height: 700px;
+  height: 100%;
+}
+
+/* Right column for quest info */
+.quest-info {
+  width: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  overflow-y: auto;
+  height: 500px;
+}

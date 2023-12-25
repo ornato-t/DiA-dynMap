@@ -23,7 +23,10 @@
 
   <body>
     <div id="app">
-      <div class="honeycomb mapClass" v-if="responseAvailable == true && !questBoardOpen">
+      <div
+        class="honeycomb mapClass"
+        v-if="responseAvailable == true && !questBoardOpen"
+      >
         <row
           v-for="element in printable"
           :element="element"
@@ -34,25 +37,27 @@
       <button class="infernal-button quest-button" onclick="app.toggleQuests()">
         Quests
       </button>
-      <button class="infernal-button faction-button" onclick="app.toggleEncounters()">
+      <button
+        class="infernal-button faction-button"
+        onclick="app.toggleEncounters()"
+      >
         Factions
       </button>
 
       <div v-if="questBoardOpen" class="quest-container">
         <div class="quest-journal">
           Quest Journal
-          <button class="infernal-button close-button" onclick="app.toggleQuests()">
+          <button
+            class="infernal-button close-button"
+            onclick="app.toggleQuests()"
+          >
             Close
           </button>
         </div>
 
         <div class="quest-container-columns">
-          <div class="quest-list">
-            nothing here yet
-          </div>  
-          <div class="quest-info">
-  
-          </div>
+          <div class="quest-list">nothing here yet</div>
+          <div class="quest-info"></div>
         </div>
       </div>
     </div>
