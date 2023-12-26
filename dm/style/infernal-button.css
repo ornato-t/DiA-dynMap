@@ -4,13 +4,13 @@
   align-items: center;
   background-image: url("../images/buttons/button.png");
   color: #fff;
-  width: 200px;
-  height: 130px;
+  width: 160px;
+  height: 45px;
   text-align: center;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 14px;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   user-select: none;
   text-transform: capitalize;

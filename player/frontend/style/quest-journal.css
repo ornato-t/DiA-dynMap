@@ -29,6 +29,9 @@
   padding-bottom: 10px;
   margin-bottom: 20px;
   height: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .quest-container-columns {
@@ -57,4 +60,28 @@
   border-radius: 10px;
   overflow-y: auto;
   height: 500px;
+}
+
+.collapsible-title {
+  padding-top: 8px;
+  padding-bottom: 8px
+}
+
+.depth-0 {
+  font-size: 30px;
+}
+
+.depth-1 {
+  font-size: 22px;
+  margin-left: 12px;
+}
+
+.depth-2 {
+  font-size: 18px;
+  margin-left: 24px;
+}
+
+.depth-3 {
+  font-size: 14px;
+  margin-left: 36px;
 }

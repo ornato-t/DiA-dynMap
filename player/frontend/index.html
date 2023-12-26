@@ -57,7 +57,7 @@
 
         <div class="quest-container-columns">
           <div class="quest-list">
-            <collapsible-list :items="quests"></collapsible-list>
+            <collapsible-list :items="quests" :depth="0"></collapsible-list>
           </div>
           <div class="quest-info"></div>
         </div>
@@ -83,12 +83,13 @@
           class="collapsible-item"
           v-for="(item, index) in items"
           :key="index"
-          @click="toggle(item)"
+          @click.stop="toggle(item)"
         >
-          <div class="collapsible-title">{{ item.title }}</div>
+          <div :class="getTitleClass(depth)">{{ item.title }}</div>
           <collapsible-list
             v-if="item.children && item.expanded"
             :items="item.children"
+            :depth="depth+1"
           >
           </collapsible-list>
         </div>

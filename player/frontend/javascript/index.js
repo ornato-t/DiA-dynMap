@@ -23,10 +23,14 @@ Vue.component('collapsible-list', {
   template: '#collapsible-list-template',
   props: {
     items: Array,
+    depth: 0
   },
   methods: {
     toggle(item) {
       this.$set(item, "expanded", !item.expanded);
+    },
+    getTitleClass(depth) {
+      return `collapsible-title depth-${depth}`;
     },
   },
 });
