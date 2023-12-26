@@ -36,23 +36,17 @@ app.post("/data/locations", function (req, res) {
 });
 
 app.post("/data/quests", function (req, res) {
-  app.post("/data/quests", function (req, res) {
-    const addExpandedProperty = (items, topLevel = true) => {
-      return items.map(item => {
-        const newItem = { ...item, expanded: topLevel };
-  
-        if (newItem.children) {
-          newItem.children = addExpandedProperty(newItem.children, false);
-        }
-  
-        return newItem;
-      });
-    };
-  
-    const questsExpanded = addExpandedProperty(quests);
-    res.send(questsExpanded);
-  });
-  
+  const addExpandedProperty = (items, topLevel = true) => {
+    return items.map((item) => {
+      const newItem = { ...item, expanded: topLevel };
+
+      if (newItem.children) {
+        newItem.children = addExpandedProperty(newItem.children, false);
+      }
+
+      return newItem;
+    });
+  };
 
   const questsExpanded = addExpandedProperty(quests);
   res.send(questsExpanded);
