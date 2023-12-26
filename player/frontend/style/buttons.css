@@ -28,3 +28,16 @@
   outline: none;
   background-image: url("../images/buttons/button2.png");
 }
+
+.quest-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-image: url("../images/buttons/qbutton.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+}

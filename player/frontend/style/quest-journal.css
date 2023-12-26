@@ -28,7 +28,6 @@
   border-bottom: 1px solid #666;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  height: 100px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -41,30 +40,57 @@
 
 .quest-list {
   width: 50%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.90);
   padding: 20px;
   margin-right: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   overflow-y: auto;
-  min-height: 700px;
-  height: 100%;
+  min-height: 800px;
+  height: 800px;
+  overflow-y: scroll;
+  border: 8px ridge #69171c;
 }
 
 /* Right column for quest info */
 .quest-info {
   width: 50%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   overflow-y: auto;
-  height: 500px;
+  min-height: 800px;
+  height: 800px;
 }
 
 .collapsible-title {
+  padding-left: 16px;
   padding-top: 8px;
-  padding-bottom: 8px
+  padding-bottom: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.collapsible-title.renderDropdown::before {
+  content: '';
+  position: absolute;
+  left: 0; 
+  top: 40%;
+
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+
+  border: solid #69171c;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.2s; 
+}
+
+.collapsible-title.renderDropdown.expanded::before {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .depth-0 {

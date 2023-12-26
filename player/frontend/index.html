@@ -34,14 +34,7 @@
         ></row>
       </div>
 
-      <button class="infernal-button quest-button" onclick="app.toggleQuests()">
-        Quests
-      </button>
-      <button
-        class="infernal-button faction-button"
-        onclick="app.toggleEncounters()"
-      >
-        Factions
+      <button class="quest-button" onclick="app.toggleQuests()">
       </button>
 
       <div v-if="questBoardOpen" class="quest-container">
@@ -85,7 +78,7 @@
           :key="index"
           @click.stop="toggle(item)"
         >
-          <div :class="getTitleClass(depth)">{{ item.title }}</div>
+          <div :class="['collapsible-title', depthClass(depth), {'expanded': item.expanded, 'renderDropdown': item.children && item.children.length > 0}]">{{ item.title }}</div>
           <collapsible-list
             v-if="item.children && item.expanded"
             :items="item.children"

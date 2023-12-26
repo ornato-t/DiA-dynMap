@@ -29,8 +29,8 @@ Vue.component('collapsible-list', {
     toggle(item) {
       this.$set(item, "expanded", !item.expanded);
     },
-    getTitleClass(depth) {
-      return `collapsible-title depth-${depth}`;
+    depthClass(depth) {
+      return 'depth-' + depth;
     },
   },
 });
