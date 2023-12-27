@@ -48,14 +48,14 @@
         </div>
 
         <div class="quest-container-columns">
-          <div class="quest-list">
+          <div class="quest-column quest-list">
             <collapsible-list
               :items="quests"
               :depth="0"
               @item-clicked="handleItemToggle"
             ></collapsible-list>
           </div>
-          <div class="quest-info">
+          <div class="quest-column quest-info">
             <template v-if="selectedQuest">
               <div v-html="selectedQuest.details"></div>
             </template>

@@ -34,34 +34,40 @@
   flex-direction: row;
 }
 
+@media (max-width: 930px) {
+  .quest-journal {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+}
+
 .quest-container-columns {
   display: flex;
   justify-content: space-between;
 }
 
-.quest-list {
-  width: 50%;
-  background: rgba(0, 0, 0, 0.9);
+.quest-column {
+  width: 100%;
   padding: 20px;
-  margin-right: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   overflow-y: auto;
-  min-height: 800px;
-  height: 800px;
+  min-height: 80vh;
+  height: 80vh;
+}
+
+.quest-list {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  margin-right: 20px;
   overflow-y: scroll;
   border: 8px ridge #69171c;
 }
 
 .quest-info {
-  width: 50%;
   background: rgba(0, 0, 0, 0.75);
-  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  overflow-y: auto;
-  min-height: 800px;
-  height: 800px;
+  max-width: 90vw;
+  overflow-x: hidden;
   text-align: center;
   font-size: 20px;
 }
@@ -75,8 +81,8 @@
     -50%,
     -50%
   ); /* Center the image horizontally and move it up by half its height */
-  width: 180px;
-  height: 180px;
+  width: 100px;
+  height: 120px;
   background-image: url("../images/skull.png");
   opacity: 0.6;
   background-size: contain; /* Keeps the aspect ratio */
@@ -129,4 +135,37 @@
 .depth-3 {
   font-size: 14px;
   margin-left: 36px;
+}
+
+@media (max-width: 930px) {
+  .depth-0 {
+    font-size: 26px;
+  }
+  
+  .depth-1 {
+    font-size: 18px;
+    margin-left: 12px;
+  }
+  
+  .depth-2 {
+    font-size: 14px;
+    margin-left: 24px;
+  }
+  
+  .depth-3 {
+    font-size: 12px;
+    margin-left: 36px;
+  }
+}
+
+@media (max-width: 500px) {
+  .quest-container-columns {
+    flex-direction: column;
+  }
+
+  .quest-list {
+    margin-bottom: 8px;
+    min-height: 20vh;
+    height: fit-content;
+  }
 }
