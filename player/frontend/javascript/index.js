@@ -96,7 +96,7 @@ var app = new Vue({
       this.questBoardOpen = !this.questBoardOpen;
     },
     handleItemToggle(item) {
-      if(!item.expanded){
+      if (!item.expanded) {
         this.selectedQuest = null;
       } else {
         this.selectedQuest = item;

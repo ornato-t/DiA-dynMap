@@ -34,8 +34,7 @@
         ></row>
       </div>
 
-      <button class="quest-button" onclick="app.toggleQuests()">
-      </button>
+      <button class="quest-button" onclick="app.toggleQuests()"></button>
 
       <div v-if="questBoardOpen" class="quest-container">
         <div class="quest-journal">
@@ -50,7 +49,11 @@
 
         <div class="quest-container-columns">
           <div class="quest-list">
-            <collapsible-list :items="quests" :depth="0" @item-clicked="handleItemToggle"></collapsible-list>
+            <collapsible-list
+              :items="quests"
+              :depth="0"
+              @item-clicked="handleItemToggle"
+            ></collapsible-list>
           </div>
           <div class="quest-info">
             <template v-if="selectedQuest">

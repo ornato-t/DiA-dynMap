@@ -9,6 +9,7 @@ Vue.component("place", {
     index: Number,
   },
 });
+
 var app = new Vue({
   el: "#app",
   data: {
