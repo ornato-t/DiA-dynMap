@@ -106,9 +106,14 @@ body {
 }
 
 .honeycomb-container {
-  overflow: scroll;
   max-width: 100vw;
   max-height: 100vh;
+}
+
+@media (max-width: 930px) {
+  .honeycomb-container {
+    overflow: scroll;
+  }
 }
 
 .honeycomb {
