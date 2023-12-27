@@ -23,6 +23,7 @@
 
   <body>
     <div id="app">
+      <div class="honeycomb-container">
         <div
           class="honeycomb mapClass"
           v-if="responseAvailable == true && !questBoardOpen"
@@ -33,6 +34,7 @@
             :printable="printable"
           ></row>
         </div>
+      </div>
 
       <button class="button quest-button" onclick="app.toggleQuests()">Journal</button>
 
