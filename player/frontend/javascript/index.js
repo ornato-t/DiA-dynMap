@@ -1,41 +1,3 @@
-let hexagonComponent = {
-  template: "#hexagon-template",
-  props: {
-    name: String,
-    hex: String,
-  },
-};
-
-let rowComponent = {
-  template: "#row-template",
-  props: {
-    printable: Array,
-    element: Array,
-    hex: String,
-  },
-  components: {
-    hexagon: hexagonComponent,
-  },
-};
-
-Vue.component('collapsible-list', {
-  name: 'collapsible-list',
-  template: '#collapsible-list-template',
-  props: {
-    items: Array,
-    depth: 0
-  },
-  methods: {
-    toggle(item) {
-      this.$set(item, "expanded", !item.expanded);
-      this.$emit('item-clicked', item);
-    },
-    depthClass(depth) {
-      return 'depth-' + depth;
-    },
-  },
-});
-
 var app = new Vue({
   el: "#app",
   data: {
@@ -45,9 +7,6 @@ var app = new Vue({
     responseAvailable: false,
     questBoardOpen: false,
     selectedQuest: null,
-  },
-  components: {
-    row: rowComponent,
   },
   methods: {
     //Receives the processed JSON data from the backend (which performs information hiding). Prints any error in the console
