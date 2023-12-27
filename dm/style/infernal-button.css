@@ -1,4 +1,5 @@
 .infernal-button {
+  font-family: "MedievalSharp", cursive;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +14,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   user-select: none;
-  text-transform: capitalize;
+  text-transform: capitalize;  
   background-color: transparent;
   border: none;
 }

@@ -34,13 +34,13 @@
         ></row>
       </div>
 
-      <button class="quest-button" onclick="app.toggleQuests()"></button>
+      <button class="button quest-button" onclick="app.toggleQuests()">Journal</button>
 
       <div v-if="questBoardOpen" class="quest-container">
         <div class="quest-journal">
           Quest Journal
           <button
-            class="infernal-button close-button"
+            class="button infernal-button close-button"
             onclick="app.toggleQuests()"
           >
             Close
