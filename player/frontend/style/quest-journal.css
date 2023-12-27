@@ -7,6 +7,7 @@
   min-width: 100vw;
   color: #ccc;
   padding: 20px;
+  transition: transform 0.2s; 
 }
 
 .quest-container::before {
@@ -52,7 +53,6 @@
   border: 8px ridge #69171c;
 }
 
-/* Right column for quest info */
 .quest-info {
   width: 50%;
   background: rgba(0, 0, 0, 0.75);
@@ -62,7 +62,27 @@
   overflow-y: auto;
   min-height: 800px;
   height: 800px;
+  text-align: center;
+  font-size: 20px;
 }
+
+.placeholder-skull {
+  content: "";
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the image horizontally and move it up by half its height */
+  width: 180px;
+  height: 180px;
+  background-image: url("../images/skull.png");
+  opacity: 0.6;
+  background-size: contain; /* Keeps the aspect ratio */
+  background-repeat: no-repeat;
+}
+
 
 .collapsible-title {
   padding-left: 16px;

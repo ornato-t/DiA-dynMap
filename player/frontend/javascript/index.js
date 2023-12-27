@@ -28,6 +28,7 @@ Vue.component('collapsible-list', {
   methods: {
     toggle(item) {
       this.$set(item, "expanded", !item.expanded);
+      this.$emit('item-clicked', item);
     },
     depthClass(depth) {
       return 'depth-' + depth;
@@ -43,6 +44,7 @@ var app = new Vue({
     quests: [],
     responseAvailable: false,
     questBoardOpen: false,
+    selectedQuest: null,
   },
   components: {
     row: rowComponent,
@@ -133,6 +135,13 @@ var app = new Vue({
     },
     toggleQuests() {
       this.questBoardOpen = !this.questBoardOpen;
+    },
+    handleItemToggle(item) {
+      if(!item.expanded){
+        this.selectedQuest = null;
+      } else {
+        this.selectedQuest = item;
+      }
     },
   },
   created() {

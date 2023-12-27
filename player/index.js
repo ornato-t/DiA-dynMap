@@ -36,9 +36,9 @@ app.post("/data/locations", function (req, res) {
 });
 
 app.post("/data/quests", function (req, res) {
-  const addExpandedProperty = (items, topLevel = true) => {
+  const addExpandedProperty = (items) => {
     return items.map((item) => {
-      const newItem = { ...item, expanded: topLevel };
+      const newItem = { ...item, expanded: false };
 
       if (newItem.children) {
         newItem.children = addExpandedProperty(newItem.children, false);

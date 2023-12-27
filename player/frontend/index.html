@@ -50,9 +50,16 @@
 
         <div class="quest-container-columns">
           <div class="quest-list">
-            <collapsible-list :items="quests" :depth="0"></collapsible-list>
+            <collapsible-list :items="quests" :depth="0" @item-clicked="handleItemToggle"></collapsible-list>
           </div>
-          <div class="quest-info"></div>
+          <div class="quest-info">
+            <template v-if="selectedQuest">
+              <div v-html="selectedQuest.details"></div>
+            </template>
+            <template v-else>
+              <div class="placeholder-skull"></div>
+            </template>
+          </div>
         </div>
       </div>
     </div>
@@ -83,6 +90,7 @@
             v-if="item.children && item.expanded"
             :items="item.children"
             :depth="depth+1"
+            @item-clicked="$emit('item-clicked', $event)"
           >
           </collapsible-list>
         </div>
