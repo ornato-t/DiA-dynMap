@@ -72,6 +72,11 @@
   font-size: 20px;
 }
 
+.quest-details img {
+  max-width: 100%;
+  height: auto;
+}
+
 .placeholder-skull {
   content: "";
   position: relative;
@@ -163,9 +168,14 @@
     flex-direction: column;
   }
 
+  .quest-column {
+    min-height: 40vh;
+    height: 60vh;
+  }
+
   .quest-list {
-    margin-bottom: 8px;
     min-height: 20vh;
     height: fit-content;
+    margin-bottom: 8px;
   }
 }

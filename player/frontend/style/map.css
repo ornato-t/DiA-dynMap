@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+height: 100vh;
 }
 
 .hexagon {
@@ -115,6 +115,23 @@ body {
   width: 1292.4px;
   padding-top: 10px;
   padding-right: 30px;
+  transform: scale(var(--scale-factor)); /* Variable for scaling */
+}
+
+:root {
+  --scale-factor: 1;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --scale-factor: 0.5;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --scale-factor: 0.6; 
+  }
 }
 
 .mapClass {

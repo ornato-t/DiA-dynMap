@@ -23,16 +23,16 @@
 
   <body>
     <div id="app">
-      <div
-        class="honeycomb mapClass"
-        v-if="responseAvailable == true && !questBoardOpen"
-      >
-        <row
-          v-for="element in printable"
-          :element="element"
-          :printable="printable"
-        ></row>
-      </div>
+        <div
+          class="honeycomb mapClass"
+          v-if="responseAvailable == true && !questBoardOpen"
+        >
+          <row
+            v-for="element in printable"
+            :element="element"
+            :printable="printable"
+          ></row>
+        </div>
 
       <button class="button quest-button" onclick="app.toggleQuests()">Journal</button>
 
@@ -57,7 +57,7 @@
           </div>
           <div class="quest-column quest-info">
             <template v-if="selectedQuest">
-              <div v-html="selectedQuest.details"></div>
+              <div class="quest-details" v-html="selectedQuest.details"></div>
             </template>
             <template v-else>
               <div class="placeholder-skull"></div>
