@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Avernus Map</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="style/avernus-map.css" />
+    <link rel="stylesheet" href="style/infernal-button.css" media="screen" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=MedievalSharp"
+    />
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
+    <script src="javascript/vue.js"></script>
+    <script src="../data/avernus-data.js"></script>
+    <script src="javascript/auxiliary.js"></script>
+  </head>
+
+  <!-- Templates -->
+
+  <script type="text/x-template" id="hexagon-template">
+    <a :href="urlMaker" :id="hex" class="hexagon">
+        <div class="hexagontent">{{ name }}</div>
+    </a>
+  </script>
+
+  <script type="text/x-template" id="row-template">
+    <div class="ibws-fix noselect">
+        <hexagon v-for="location in element" :key="location.hex" :hex="location.hex" :name="location.name" url="urlMaker"></hexagon>
+    </div>
+  </script>
+
+  <!-- Body -->
+
+  <body>
+    <div class="honeycomb" :class="[!showTerrain ? map : lowLv]" id="app">
+      <div v-for="element in printable">
+        <row :element="element"></row>
+
+        <div
+          :class="[showTerrain ? visTerr : invisTerr]"
+          style="position: absolute"
+        >
+          <img
+            class="hexImg noselect"
+            v-for="terr in element"
+            :id="terr.hex"
+            :src="'images/avernus-tiles/'+terr.terrain[0]+'.png'"
+          />
+        </div>
+      </div>
+      <img class="upperLev" src="images/upper.png" v-if="showTerrain" />
+    </div>
+
+    <button class="infernal-button floating" onclick="app.swapMap()">
+      Swap map
+    </button>
+
+    <script src="javascript/avernus.js"></script>
+  </body>
+</html>

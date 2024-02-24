@@ -1,0 +1,55 @@
+.button {
+  font-family: "MedievalSharp", cursive;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.infernal-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/buttons/button.png");
+  width: 160px;
+  height: 45px;
+  user-select: none;
+  text-transform: capitalize;
+}
+
+.infernal-button:hover {
+  background-image: url("../images/buttons/button3.png");
+  outline: none;
+}
+
+.infernal-button:focus {
+  background-image: url("../images/buttons/button2.png");
+  outline: none;
+}
+
+.quest-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-image: url("../images/buttons/qbutton.png");
+  width: 190px;
+  height: 75px;
+  z-index: 100;
+}
+
+@media (max-width: 930px) {
+  .infernal-button {
+    width: 128px;
+    height: 36px;
+  }
+
+  .quest-button {
+    width: 152px;
+    height: 60px;
+  }
+}

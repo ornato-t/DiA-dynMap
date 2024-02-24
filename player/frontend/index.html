@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Avernus Map</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style/map.css">
-    <title>Dynamic map</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="style/map.css" />
+    <link rel="stylesheet" type="text/css" href="style/buttons.css" />
+    <link rel="stylesheet" type="text/css" href="style/quest-journal.css" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=MedievalSharp"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-</head>
 
-<body>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  </head>
+
+  <body>
     <div id="app">
-        <div class="honeycomb mapClass" v-if="responseAvailable == true">
-            <row v-for="element in printable" :element="element" :printable="printable"></row>
+      <div class="honeycomb-container">
+        <div
+          class="honeycomb mapClass"
+          v-if="responseAvailable == true && !questBoardOpen"
+        >
+          <row
+            v-for="element in printable"
+            :element="element"
+            :printable="printable"
+          ></row>
         </div>
-    </div>
+      </div>
 
+      <button class="button quest-button" onclick="app.toggleQuests()">Journal</button>
+
+      <div v-if="questBoardOpen" class="quest-container">
+        <div class="quest-journal">
+          Quest Journal
+          <button
+            class="button infernal-button close-button"
+            onclick="app.toggleQuests()"
+          >
+            Close
+          </button>
+        </div>
+
+        <div class="quest-container-columns">
+          <div class="quest-column quest-list">
+            <collapsible-list
+              :items="quests"
+              :depth="0"
+              @item-clicked="handleItemToggle"
+            ></collapsible-list>
+          </div>
+          <div class="quest-column quest-info">
+            <template v-if="selectedQuest">
+              <div class="quest-details" v-html="selectedQuest.details"></div>
+            </template>
+            <template v-else>
+              <div class="placeholder-skull"></div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--vue.js scripts below here-->
 
     <script type="text/x-template" id="hexagon-template">
-        <div :id="hex" class="hexagon">
-            <div class="hexagontent">{{ name }}</div>
-        </div>
+      <div :id="hex" class="hexagon">
+          <div class="hexagontent">{{ name }}</div>
+      </div>
     </script>
 
     <script type="text/x-template" id="row-template">
-        <div class="ibws-fix noselect">
-            <hexagon v-for="location in element" :key="location.hex" :hex="location.hex" :name="location.name" :class="location.status"></hexagon>
-        </div>
+      <div class="ibws-fix noselect">
+          <hexagon v-for="location in element" :key="location.hex" :hex="location.hex" :name="location.name" :class="location.status"></hexagon>
+      </div>
     </script>
 
-    <script src="javascript/index.js"></script>
-</body>
+    <script type="text/x-template" id="collapsible-list-template">
+      <div class="collapsible-list">
+        <div
+          class="collapsible-item"
+          v-for="(item, index) in items"
+          :key="index"
+          @click.stop="toggle(item)"
+        >
+          <div :class="['collapsible-title', depthClass(depth), {'expanded': item.expanded, 'renderDropdown': item.children && item.children.length > 0}]">{{ item.title }}</div>
+          <collapsible-list
+            v-if="item.children && item.expanded"
+            :items="item.children"
+            :depth="depth+1"
+            @item-clicked="$emit('item-clicked', $event)"
+          >
+          </collapsible-list>
+        </div>
+      </div>
+    </script>
 
+    <script src="javascript/components.js"></script>
+    <script src="javascript/index.js"></script>
+  </body>
 </html>

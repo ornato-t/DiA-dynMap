@@ -1,3 +1,4 @@
 /player/node_modules
+/player/data
 package-lock.json
 package.json

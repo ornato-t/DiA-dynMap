@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html style="font-size: 16px">
+  <!-- Head -->
+
+  <head>
+    <title>Avernus Location</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style/imported.css" media="screen" />
+    <link rel="stylesheet" href="style/locations.css" media="screen" />
+    <link rel="stylesheet" href="style/infernal-button.css" media="screen" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=MedievalSharp"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
+    <script src="javascript/vue.js"></script>
+    <script src="../data/avernus-data.js"></script>
+  </head>
+
+  <!-- Templates -->
+
+  <script type="text/x-template" id="place-template">
+    <section class="u-align-center u-white u-section-1">
+        <div class="u-sheet u-sheet-1">
+            <div class="u-text u-text-1"> {{ name }}
+            </div>
+            <div class="u-text-2">
+                <p v-if="item">
+                    Items in place: {{ item }}
+                </p>
+                <p>
+                    Terrain: {{ terrain }}
+                </p>
+              </div>
+            <p class="u-align-justify u-text u-text-3" v-html="text"></p>
+            <a href="avernus.html" class="infernal-button">return to the map</a>
+        </div>
+    </section>
+  </script>
+
+  <!-- Body -->
+
+  <body>
+    <div id="app">
+      <place
+        v-for="(item, index) in printable"
+        :key="item.hex"
+        :name="item.name"
+        :item="item.item"
+        :terrain="renderTerrain(item)"
+        :text="item.text"
+        :index="index"
+        :end="printable.length - 1"
+      ></place>
+    </div>
+    <script src="javascript/avernus-location.js"></script>
+  </body>
+</html>
